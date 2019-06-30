@@ -7,7 +7,13 @@ $(document).ready(
 			function()
 			{
 				$("#postInput").click();
-				$("#button").click();
+
+				$("#postInput").on("change",
+					function ()
+					{
+						$("#button").click();
+					}
+				);
 			}
 		);
 

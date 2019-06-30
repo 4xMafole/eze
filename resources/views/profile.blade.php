@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+	<meta name="viewport" content="width=device-width">
 	<meta name="_token" content="{{csrf_token()}}" />
 
 	<title>profile</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/v4-shims.css">	
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    
+    <script src="https://kit.fontawesome.com/3a5563d1ac.js"></script>
 
     <script type='text/javascript' src='{{ URL::asset('unitegallery/js/unitegallery.min.js') }}'></script> 
 	<script type='text/javascript' src='{{ URL::asset('unitegallery/themes/tiles/ug-theme-tiles.js') }}'></script>
@@ -45,6 +46,9 @@
 					<i class="fas fa-cog control" style="margin-left: 80%;"></i>
 					
 					<ul class="list" style="list-style-type: none;">
+						<li>
+							<a href="#password-edit" rel="modal:open" class="link">Change password</a>
+						</li>						
 						<li>
 							<a href="{{ route('privacy') }}" rel="modal:open" class="link">Privacy</a>
 						</li>
@@ -94,6 +98,7 @@
 
 		<div id="challenges" class="modal">
 		</div>
+		
 	</div>
 	{{-- username edit --}}
 	<div id="username-edit" class="modal">
@@ -104,6 +109,23 @@
 			<span id="warn">*min: 5 characters.</span>
 		</form>
 	</div>
+	{{-- password changer --}}
+	<div id="password-edit" class="modal">
+
+		<span id="notifier">
+		</span>
+
+		<form class="changeps" action="{{ route('changePassword') }}" method="POST">
+			{{ csrf_field() }}
+			<input type="password" id="current-password" name="current_password" placeholder="current password" required>
+
+			<input type="password" id="new-password" name="new_password" placeholder="new password" required>
+
+			<input type="password" id="new-password-confirm" name="new_password_confirmation" placeholder="confirm" required>
+			{{-- <button> --}}<i id="changeps" class="fas fa-archive control edit"></i>{{-- </button> --}}
+		</form>
+	</div>
+
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
@@ -160,18 +182,6 @@
 								</div>
 							</div>
 
-{{-- 							<div class="follow-btn" data-userid="{{ Auth::id() }}">
-								@if(auth()->user()->isFollowing(Auth::id()))
-									<div class="following">
-										Following
-									</div>
-								@else
-									<div class="follow">
-										Follow
-									</div>
-								@endif
-							</div> --}}
-							
 						</div>
 						<div class="panel">
 							<div class="navigators">
@@ -185,259 +195,18 @@
 						</div>
 					</div>
 				</div>
+
+				{{--All notifications pop up here.  --}}
 				<div class="col-md-3">
-{{-- 					<div class="side-lit">
-						<div class="chal-notify">
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/b.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status" style="margin-top: 20px;">
-											<b>Erick Mafole </b>
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/c.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status" style="margin-top: 20px;">
-											<b>Hassan Masinde </b>
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/d.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status" style="margin-top: 20px;">
-											<b>Manyamanya </b>
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/e.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status" style="margin-top: 20px;">
-											<b>Bill Gates </b>
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/u.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status" style="margin-top: 20px;">
-											<b>Steve Jobs </b>
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/opp.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status" style="margin-top: 20px;">
-											<b>Walt Disney </b>
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/us.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status" style="margin-top: 20px;">
-											<b>Lukelo_Jose </b>
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/f.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status" style="margin-top: 20px;">
-											<b>Warren Buffet </b>
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>							
-						</div>	
-						<br>
-						<div class="lit-notify">
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/b.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status">
-											<b>Erick Mafole </b>lit your challenge
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/c.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status">
-											<b>Hassan Masinde </b>lit your challenge
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/d.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status">
-											<b>Manyamanya </b>lit your challenge
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/e.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status">
-											<b>Bill Gates </b>lit your challenge
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/u.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status">
-											<b>Steve Jobs </b>lit your challenge
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/opp.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status">
-											<b>Walt Disney </b>lit your challenge
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/us.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status">
-											<b>Lukelo_Jose </b>lit your challenge
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/f.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status">
-											<b>Warren Buffet </b>lit your challenge
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>							
-						</div>
-					</div> --}}
+					<div class="side-lit">
+					</div>
 				</div>
+				
 			</div>
 		</div>
 	</div>
-	<script src="js/nav.js"></script>
-	<script src="js/profile.js"></script>
+	<script src="{{ URL::asset('js/nav.js') }}"></script>
+	<script src="{{ URL::asset('js/profile.js') }}"></script>
+	<script src="{{ URL::asset('js/sidelit.js') }}"></script>
 </body>
 </html>

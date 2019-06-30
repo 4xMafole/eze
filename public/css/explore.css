@@ -1,3 +1,7 @@
+/*NB:: Before production process to showcase to the public, 
+all css files should be minified to reduce bytes, 
+in order to increase optimatization process for the page to load faster.*/
+
 .explore
 {
 	height: 38em;
@@ -36,6 +40,11 @@ a.link:hover
     height: 60px;
     width: 60px;
     border-radius: 30px;
-    box-shadow: 1px 1px 7px 0px #7d7d7dde;
+    box-shadow: 1px 1px 7px 0px #d8d5d5;
     cursor: default;
+}
+
+.modal a.close-modal
+{
+    display: none;
 }

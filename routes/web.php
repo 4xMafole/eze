@@ -17,15 +17,18 @@
 	Route::get('/aboutus', 'SettingController@aboutus')->name('aboutus');
 
 //guest routes
-	Route::get('/', function () {
+	Route::get('/', function () 
+	{
 	    return view('index');
 	})->name('index')->middleware('guest');
 
-	Route::get('/form', function() {
+	Route::get('/form', function() 
+	{
 		return view('form');
 	})->middleware('guest');
 
-	Route::get('/landing', function() {
+	Route::get('/landing', function() 
+	{
 		return view('landing');
 	})->name('landing')->middleware('guest');
 
@@ -37,6 +40,15 @@
 		Route::get('/guest', 'AuthController@getLogin')->name('login')->middleware('guest');
 		Route::post('/guest', 'AuthController@postLogin');
 
+//Forgot password routes
+		//Forgot password
+		Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('email.reset');
+		Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+		//Reset password
+		Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reseting');
+		Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.reset');
+
+
 //authenticated users routes
 	//explore 
 	Route::get('/explore','ExploreController@index' )->name('explore')->middleware('auth');
@@ -46,6 +58,10 @@
 		Route::get('/explore/{id}', 'ExploreController@profile')->middleware('auth');
 		//user challenge
 		Route::get('/explore/{id}/challenges', 'ExploreController@userChallenges')->middleware('auth');
+		//post challenge
+		Route::get('/post', 'ExploreController@postChallenges')->name('post_challenge')->middleware('auth');
+		//flying
+		Route::post('/post/fly', 'ExploreController@fly')->middleware('auth');
 
 	//home || filter 
 	Route::get('/home', 'FilterController@index')->name('filter')->middleware('auth');
@@ -71,7 +87,14 @@
 
 		//lit toggle
 		Route::post('/profile/lit', 'ProfileController@lit')->name('lit')->middleware('auth');
+		//change password
+		Route::get('/profile/password', 'ProfileController@password')->middleware('auth');
+		
+		Route::post('/profile/changepd', 'ProfileController@changePassword')->name('changePassword')->middleware('auth');
 		//logout
 		Route::get('/profile/logout', 'ProfileController@logout')->name('logout')->middleware('auth');
+
+	//sidelit
+	Route::get('/notification', 'NotificationController@index')->name('sidelit')->middleware('auth');
 
 

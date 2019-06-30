@@ -1,7 +1,8 @@
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 	<head>
+		<meta name="viewport" content="width=device-width">
 		
-		<link rel="stylesheet" href="{{ URL::asset('css/landing.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('css/minified/landing.min.css') }}">
 	</head>
 	<body>
 		<div class="landing">

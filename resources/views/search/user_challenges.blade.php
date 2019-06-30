@@ -1,6 +1,8 @@
 {{-- user challenges --}}
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 	<head>
+		<meta name="viewport" content="width=device-width">
+		
 		<meta name="_token" content="{{csrf_token()}}" />
 
 		<link rel="stylesheet" href="{{ URL::asset('css/filter.css') }}">

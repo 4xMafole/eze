@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace eze\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
+use Validator;
 use Auth;
-use App\Models\User;
-use App\Models\Avatar;
-use App\Models\Post;
-use App\Models\Challenge;
+use eze\Models\User;
+use eze\Models\Avatar;
+use eze\Models\Post;
+use eze\Models\Challenge;
 
 
 class ProfileController extends Controller
@@ -137,6 +138,64 @@ class ProfileController extends Controller
 
     }
 
+    public function password()
+    {
+        return view('password');
+    }
+
+    public function changePassword(Request $request)
+    {
+        //requested data
+        $current_password = $request->get('current_password');
+        $new_password = $request->get('new_password');
+        $new_password_confirmation =$request->get('new_password_confirmation');
+
+        /**
+         * if statement - ensures that the input fields are not empty.
+         */
+        
+        if($current_password != "" && $new_password != "" && $new_password_confirmation != "")
+        {
+
+            if (!(\Hash::check($current_password, Auth::user()->password))) 
+            {
+                $c_error = "Current password does not match the old password.";
+                // The passwords matches
+                return response()->json(['c_error' => $c_error]);
+            }
+
+            elseif(strcmp($current_password, $new_password) == 0)
+            {
+                $n_error = "New password cannot be the same as your current password.";
+                //Current password and new password are same
+                return response()->json(['n_error' => $n_error]);
+            }
+
+            $validatedData = Validator::make($request->all(),[
+                'current_password' => 'required',
+                'new_password' => 'required|string|min:6|confirmed',
+            ]);
+
+            //Change Password
+            $user = Auth::user();
+            $user->password = bcrypt($request->get('new_password'));
+            $user->save();
+
+            $success = "Password changed successfully!";
+
+            // return 
+            return response()->json(['success' => $success]);
+        }
+        else
+        {
+            $all_error = "All fields must be filled.";
+            // The passwords matches
+            return response()->json(['all_error' => $all_error]);            
+        }
+
+
+    }
+
     public function logout()
     {
         Auth::logout();
@@ -237,6 +296,28 @@ class ProfileController extends Controller
                 }
         }
 
+    //password
+        // public function checkPassword($current_password, $new_password)
+        // {
 
+
+        //         if (!(\Hash::check($current_password, Auth::user()->password))) 
+        //         {
+        //             $c_error = "Current password does not match the old password.";
+        //             // The passwords matches
+        //             return response()->json(['c_error' => $c_error]);
+        //         }
+
+        //         elseif(strcmp($current_password, $new_password) == 0)
+        //         {
+        //             $n_error = "New password cannot be the same as your current password.";
+        //             //Current password and new password are same
+        //             return response()->json(['n_error' => $n_error]);
+        //         }
+        //         else
+        //         {
+        //             return;
+        //         }    
+        // }        
 
 }

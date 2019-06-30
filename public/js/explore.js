@@ -2,12 +2,23 @@ $(document).ready(
 	function($)
 	{
 
+		$(".fa-eye").click(
+			function()
+			{
+				$('#challenge').load("/post/");
+			}
+		);
+
 		$("#gallery").unitegallery(
 		{
+			gallery_theme:"tiles",
 			tiles_type:"justified",
 			tile_enable_icons:false,
+			tile_as_link:true,
 		}
 		);
+
+		$('a[target="_blank"]').removeAttr('target');
 
 
 		$("#search-bar").typeahead(
@@ -58,13 +69,9 @@ $(document).ready(
 
 			            suggestion: function (data) 
 			            {
-			            	$.each(data, 
-			            		function()
-			            		{
-					            	$(".search-rslts").load("/explore/" + data.id + " #pro-avatar");
-			            		}
-		            		);
 
+			            	$(".search-rslts").load("/explore/" + data.id + " #pro-avatar");
+		
 			                return '<a href=\"/explore/' + data.id +'\" class="list-group-item link" > @' + data.username + '</a>'
 			      	}
 			        }

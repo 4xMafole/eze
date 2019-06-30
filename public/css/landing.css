@@ -1,3 +1,7 @@
+/*NB:: Before production process to showcase to the public, 
+all css files should be minified to reduce bytes, 
+in order to increase optimatization process for the page to load faster.*/
+
 body,html{
     margin:0;
     padding:0;
@@ -11,6 +15,7 @@ body,html{
     background-size: cover;
   }
 
+/*this cascading style wastes time it is expensive for the browser to run fast.*/
   .landing > img
   {
     width: 100%;
@@ -29,6 +34,8 @@ body,html{
     animation: imageAnimation 10s linear infinite 0s;    
   }
 
+/*this cascading style wastes time it is expensive for the browser to run fast.*/
+
   .landing > img:nth-child(1)
   {
     -webkit-animation-delay: 0s;
@@ -37,6 +44,8 @@ body,html{
     -ms-animation-delay: 0s;
     animation-delay: 0s;    
   }    
+
+/*this cascading style wastes time it is expensive for the browser to run fast.*/
 
   .landing > img:nth-child(2)
   {

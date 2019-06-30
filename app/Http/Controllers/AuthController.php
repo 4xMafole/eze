@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace eze\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Models\User;
+use eze\Models\User;
 
 class AuthController extends Controller
 {
@@ -20,7 +20,7 @@ class AuthController extends Controller
 		$request->validate(
 			[
 			'username' => 'required|unique:users|min:5',
-			'password' => 'required|min:6',
+			'password' => 'required|min:6|confirmed',
 			'email' => 'required|unique:users|email|max:255',
 			]
 		); 
@@ -30,7 +30,7 @@ class AuthController extends Controller
 			[
 				'email' => $request->input('email'),
 				'username' => $request->input('username'),
-				'password' => bcrypt ($request->input('password')),
+				'password' => bcrypt($request->input('password')),
 			]
 		);
 

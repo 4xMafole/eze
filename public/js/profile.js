@@ -5,8 +5,10 @@ $(document).ready(
 		//gallery controller
 		$("#gallery").unitegallery(
 		{
+			gallery_theme:"tiles",
 			tiles_type:"justified",
 			tile_enable_icons:false,
+			tile_as_link:true,
 		}
 		);
 
@@ -17,7 +19,13 @@ $(document).ready(
 			function ()
 			{
 				$("#avatarInput").click();
-				$("#button").click();
+				
+				$("#avatarInput").on("change",
+					function ()
+					{
+						$("#button").click();
+					}
+				);
 			}
 		);
 
@@ -43,14 +51,6 @@ $(document).ready(
 
 				$("#challenge").load("/explore/"+ userid +"/challenges");
 
-			}
-		);
-
-		$(".fa-camera").click(
-			function()
-			{
-				$(".fa-grip-vertical").removeClass("nav-selector-active");
-				$(".fa-camera").addClass("nav-selector-active");				
 			}
 		);
 
@@ -113,6 +113,60 @@ $(document).ready(
 					function()
 					{
 						$(this).fadeOut(200);
+					}
+				);
+			}
+		);
+
+		//password changer
+		$("#changeps").click(
+			function()
+			{
+
+				$.ajaxSetup(
+					{
+						headers: {
+							'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+						}
+					}
+				);
+
+				var crnt_psd = document.getElementById('current-password').value; 
+				var nw_psd = document.getElementById("new-password").value;
+				var	cfm_psd = document.getElementById("new-password-confirm").value;
+
+
+
+				$.ajax(
+					{
+						type:'POST',
+						url:'/profile/changepd',
+						data: {current_password:crnt_psd,new_password:nw_psd,new_password_confirmation:cfm_psd},
+						success: function(data)
+						{
+
+							if (data.all_error)
+							{
+								$("#notifier").html(data.all_error);
+							}
+
+
+							if (data.c_error) 
+							{
+								$("#notifier").html(data.c_error);
+							}
+
+							if (data.n_error)
+							{
+								$("#notifier").html(data.n_error);
+							}
+
+							if (data.success)
+							{
+								$("#notifier").html(data.success);
+							}
+
+						}
 					}
 				);
 			}

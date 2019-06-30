@@ -1,19 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace eze\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Avatar;
-use App\Models\User;
-use App\Models\Post;
-use App\Models\Challenge;
+use eze\Models\Avatar;
+use eze\Models\User;
+use eze\Models\Post;
+use eze\Models\Challenge;
 
 class ExploreController extends Controller
 {
+
 	public function index()
-	{
-		$posts = Post::pluck('post')->reverse();
+	{	
+        $user_post_id = Challenge::pluck('user_post_id');
+	    $posts = Post::find($user_post_id)->pluck('post')->reverse();
 
 		return view('explore')->with(['posts' => $posts]);
 	}
@@ -61,6 +63,21 @@ class ExploreController extends Controller
 
 	}
 
+	public function postChallenges()
+	{
+		$challenges = Challenge::all()->reverse();
+
+		return view("post_challenges")->with(['challenge' => $challenges]);
+	}
+
+	public function fly(Request $request)
+	{
+		$user = User::find($request->user_id);
+		$data = auth()->user()->toggleFollow($user);
+		$id = $request->user_id;
+
+		return response()->json(['success' => $data, 'id' => $id]);
+	}
 
 //custom functions
 

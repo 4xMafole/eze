@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace eze\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use eze\Models\User;
 use Auth;
-use App\Models\Avatar;
+use eze\Models\Avatar;
 
 class SearchController extends Controller
 {

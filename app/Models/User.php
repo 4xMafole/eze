@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace eze\Models;
+
+use Illuminate\Contracts\Auth\CanResetPassword;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -46,7 +48,7 @@ class User extends Authenticatable
 
     public function avatar()
     {
-        return $this->hasOne('App\Models\Avatar', 'user');
+        return $this->hasOne('eze\Models\Avatar', 'user');
     }
 
     /**
@@ -54,7 +56,7 @@ class User extends Authenticatable
      */
     public function post()
     {
-        return $this->hasMany('App\Models\Post', 'user');
+        return $this->hasMany('eze\Models\Post', 'user');
     }
 
     /**
@@ -62,7 +64,7 @@ class User extends Authenticatable
      */
     public function challenge_post()
     {
-        return $this->hasMany('App\Models\Challenge', 'user');
+        return $this->hasMany('eze\Models\Challenge', 'user');
     }
     
     /**
@@ -70,7 +72,7 @@ class User extends Authenticatable
      */
     public function challenged_post()
     {
-        return $this->hasMany('App\Models\Challenge', 'challenger');
+        return $this->hasMany('eze\Models\Challenge', 'challenger');
     }
 
 }

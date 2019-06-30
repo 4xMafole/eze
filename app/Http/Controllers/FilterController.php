@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace eze\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 
 use Auth;
-use App\Models\User;
-use App\Models\Post;
-use App\Models\Challenge;
-use App\Models\Avatar;
+use eze\Models\User;
+use eze\Models\Post;
+use eze\Models\Challenge;
+use eze\Models\Avatar;
 
 class FilterController extends Controller
 {

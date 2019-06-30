@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+	<meta name="viewport" content="width=device-width">
+	
 	<meta name="_token" content="{{csrf_token()}}" />
 
 	<title>profile</title>
@@ -98,11 +100,13 @@
 										<element>
 											{{ $user_id->username }}
 										</element>
+										
 										<a class="link" href="#username-edit" rel="modal:open">
 											<i class="fas fa-pencil-alt control edits" id="usernm-edit"></i>
 										</a>
 									</div>
 								</div>
+
 								<div class="user-details">
 
 									<div class="row detail-number" align="center">
@@ -128,6 +132,7 @@
 										</div>
 									</div>
 								</div>
+
 								@if($user_id->id != Auth::id())
 									<div class="follow-btn">
 										@if(auth()->user()->isFollowing($user_id->id))

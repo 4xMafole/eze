@@ -1,0 +1,43 @@
+1.Block search indexing with 'noindex'
+
+Implementing noindex
+There are two ways to implement noindex: as a meta tag and as an HTTP response header. They are equivalent in effect, but you might choose one or the other as more convenient based on how much control you have over your server and your specific publishing process.
+
+<meta> tag
+To prevent most search engine web crawlers from indexing a page on your site, place the following meta tag into the <head> section of your page:
+
+<meta name="robots" content="noindex">
+To prevent only Google web crawlers from indexing a page:
+
+<meta name="googlebot" content="noindex">
+You should be aware that some search engine web crawlers might interpret the noindex directive differently. As a result, it is possible that your page might still appear in results from other search engines.
+
+
+2.Upload problem solved 'Updation for the previous versions of the app'
+
+Before clicking the submit button.
+Apply onChange functionality in the .js file extensions.
+Forexample:
+	Before
+$("inputclass").click();
+$("button").click();
+
+	After
+$("inputclass").click();
+$("inputclass").on("change",
+	function()
+	{
+		$("button").click();
+	}
+);
+
+
+3. Searching system
+
+	Before
+searched users profile photos are not concurrent showed besides user's name.
+
+	Solution
+Back end developer should use the knowledge of relationships
+through user's model.
+Required to use avatar linking function in the user's model.

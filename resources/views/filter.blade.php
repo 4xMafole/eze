@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-
+	<meta name="viewport" content="width=device-width">
+	
 	<meta name="_token" content="{{csrf_token()}}" />
 
 	<title>filter</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/v4-shims.css">	
-	<link rel="stylesheet" href="css/nav.css">
-	<link rel="stylesheet" href="css/sidelit.css">
-	<link rel="stylesheet" href="css/filter.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/3a5563d1ac.js"></script>
+
+
+	<link rel="stylesheet" href="{{ URL::asset('css/nav.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/sidelit.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/filter.css') }}">
 
 </head>
 
@@ -21,7 +23,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<img id="brand" src="img/eze_logo_c.png" alt="company logo">
+				<img id="brand" src="{{ URL::asset('img/eze_logo_c.png') }}" alt="company logo">
 			</div>
 			<div class="col-md-4">
 				<div class="nav">
@@ -77,9 +79,13 @@
 													<div class="header">
 														<div class="card-avatar">
 															@if($challenge->user_avatar != null)
-																<img id="avatar" src="/storage/{{ $challenge->user_avatar }}">
+																<a href="explore/{{ $challenge->user }}">
+																	<img id="avatar" src="/storage/{{ $challenge->user_avatar }}">
+																</a>
 															@else
-																<img id="avatar" src="{{ URL::asset('img/avatar.jpg') }}" alt="">
+																<a href="explore/{{ $challenge->user }}">
+																	<img id="avatar" src="{{ URL::asset('img/avatar.jpg') }}" alt="">
+																</a>
 															@endif
 														</div>
 														<div class="username">{{ $challenge->user_name }}</div>
@@ -121,9 +127,13 @@
 													<div class="header">
 														<div class="card-avatar">
 															@if ($challenge->challenger_avatar != null)
-																<img id="avatar" src="/storage/{{ $challenge->challenger_avatar }}" alt="">
+																<a href="explore/{{ $challenge->challenger }}">
+																	<img id="avatar" src="/storage/{{ $challenge->challenger_avatar }}" alt="">
+																</a>
 															@else
-																<img id="avatar" src="{{ URL::asset('img/avatar.jpg') }}" alt="">
+																<a href="explore/{{ $challenge->challenger }}">
+																	<img id="avatar" src="{{ URL::asset('img/avatar.jpg') }}" alt="">
+																</a>
 															@endif
 														</div>
 														<div class="username">{{ $challenge->challenger_name }}</div>
@@ -165,260 +175,19 @@
 
 					</div>
 				</div>
+
+				{{-- All notifications comes here --}}
 				<div class="col-md-3">
-{{-- 					<div class="side-lit">
-						<div class="chal-notify">
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/b.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status" style="margin-top: 20px;">
-											<b>Erick Mafole </b>
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/c.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status" style="margin-top: 20px;">
-											<b>Hassan Masinde </b>
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/d.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status" style="margin-top: 20px;">
-											<b>Manyamanya </b>
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/e.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status" style="margin-top: 20px;">
-											<b>Bill Gates </b>
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/u.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status" style="margin-top: 20px;">
-											<b>Steve Jobs </b>
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/opp.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status" style="margin-top: 20px;">
-											<b>Walt Disney </b>
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/us.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status" style="margin-top: 20px;">
-											<b>Lukelo_Jose </b>
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/f.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status" style="margin-top: 20px;">
-											<b>Warren Buffet </b>
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>							
-						</div>	
-						<br>
-						<div class="lit-notify">
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/b.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status">
-											<b>Erick Mafole </b>lit your challenge
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/c.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status">
-											<b>Hassan Masinde </b>lit your challenge
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/d.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status">
-											<b>Manyamanya </b>lit your challenge
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/e.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status">
-											<b>Bill Gates </b>lit your challenge
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/u.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status">
-											<b>Steve Jobs </b>lit your challenge
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/opp.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status">
-											<b>Walt Disney </b>lit your challenge
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/us.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status">
-											<b>Lukelo_Jose </b>lit your challenge
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="status">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="avatar">
-											<img id="side-avatar" src="img/f.jpg" alt="company logo">
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="side-status">
-											<b>Warren Buffet </b>lit your challenge
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>							
-						</div>
-					</div> --}}
+					<div class="side-lit">
+					</div>
 				</div>
+				
 			</div>			
 		</div>
 	</div>
 	<script src="{{ URL::asset('js/nav.js') }}"></script>
 	<script src="{{ URL::asset('js/filter.js') }}"></script>
 	<script src="{{ URL::asset('js/challenge.js') }}"></script>
+	<script src="{{ URL::asset('js/sidelit.js') }}"></script>
 </body>
 </html>  

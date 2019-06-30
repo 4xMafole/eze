@@ -1,6 +1,8 @@
 {{-- user challenges --}}
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 	<head>
+		<meta name="viewport" content="width=device-width">
+		
 		<meta name="_token" content="{{csrf_token()}}" />
 
 		<link rel="stylesheet" href="{{ URL::asset('css/filter.css') }}">
@@ -33,9 +35,13 @@
 									<div class="header" id="header">
 										<div class="card-avatar">
 											@if($challenge->user_avatar != null)
-												<img id="avatar" src="/storage/{{ $challenge->user_avatar }}">
+												<a href="explore/{{ $challenge->user }}">
+													<img id="avatar" src="/storage/{{ $challenge->user_avatar }}">
+												</a>
 											@else
-												<img id="avatar" src="{{ URL::asset('img/avatar.jpg') }}" alt="">
+												<a href="explore/{{ $challenge->user }}">
+													<img id="avatar" src="{{ URL::asset('img/avatar.jpg') }}" alt="">
+												</a>
 											@endif
 										</div>
 										<div class="username">{{ $challenge->user_name }}</div>
@@ -77,9 +83,13 @@
 									<div class="header" id="header">
 										<div class="card-avatar">
 											@if ($challenge->challenger_avatar != null)
-												<img id="avatar" src="/storage/{{ $challenge->challenger_avatar }}" alt="">
+												<a href="explore/{{ $challenge->challenger }}">
+													<img id="avatar" src="/storage/{{ $challenge->challenger_avatar }}" alt="">
+												</a>
 											@else
-												<img id="avatar" src="{{ URL::asset('img/avatar.jpg') }}" alt="">
+												<a href="explore/{{ $challenge->challenger }}">
+													<img id="avatar" src="{{ URL::asset('img/avatar.jpg') }}" alt="">
+												</a>
 											@endif
 										</div>
 										<div class="username">{{ $challenge->challenger_name }}</div>
@@ -111,9 +121,13 @@
 									<div class="header" id="header">
 										<div class="card-avatar">
 											@if($challenge->user_avatar != null)
-												<img id="avatar" src="/storage/{{ $challenge->user_avatar }}">
+												<a href="explore/{{ $challenge->user }}">
+													<img id="avatar" src="/storage/{{ $challenge->user_avatar }}">
+												</a>
 											@else
-												<img id="avatar" src="{{ URL::asset('img/avatar.jpg') }}" alt="">
+												<a href="explore/{{ $challenge->user }}">
+													<img id="avatar" src="{{ URL::asset('img/avatar.jpg') }}" alt="">
+												</a>
 											@endif
 										</div>
 										<div class="username">{{ $challenge->user_name }}</div>
@@ -155,9 +169,13 @@
 									<div class="header" id="header">
 										<div class="card-avatar">
 											@if ($challenge->challenger_avatar != null)
-												<img id="avatar" src="/storage/{{ $challenge->challenger_avatar }}" alt="">
+												<a href="explore/{{ $challenge->challenger }}">
+													<img id="avatar" src="/storage/{{ $challenge->challenger_avatar }}" alt="">
+												</a>
 											@else
-												<img id="avatar" src="{{ URL::asset('img/avatar.jpg') }}" alt="">
+												<a href="explore/{{ $challenge->challenger }}">
+													<img id="avatar" src="{{ URL::asset('img/avatar.jpg') }}" alt="">
+												</a>
 											@endif
 										</div>
 										<div class="username">{{ $challenge->challenger_name }}</div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace eze\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,6 +21,6 @@ class Post extends Model
      */
     public function user()
     {
-    	return $this->belongsTo('App\Models\User', 'user');
+    	return $this->belongsTo('eze\Models\User', 'user');
     }
 }
