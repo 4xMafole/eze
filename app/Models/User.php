@@ -1,15 +1,20 @@
 <?php
 
-namespace App\Models;
+namespace eze\Models;
+
+use Illuminate\Contracts\Auth\CanResetPassword;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Overtrue\LaravelFollow\Traits\CanFollow;
+use Overtrue\LaravelFollow\Traits\CanBeFollowed;
+use Overtrue\LaravelFollow\Traits\CanLike;
 
 class User extends Authenticatable
 {
-    use Notifiable;
-
+    use Notifiable,CanFollow,CanBeFollowed,CanLike;
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -43,7 +48,31 @@ class User extends Authenticatable
 
     public function avatar()
     {
-        return $this->hasOne('App\Models\Avatar', 'user');
+        return $this->hasOne('eze\Models\Avatar', 'user');
+    }
+
+    /**
+     * Get the posts associated with the user.
+     */
+    public function post()
+    {
+        return $this->hasMany('eze\Models\Post', 'user');
+    }
+
+    /**
+     * Get the user's challenge post associated with the user.
+     */
+    public function challenge_post()
+    {
+        return $this->hasMany('eze\Models\Challenge', 'user');
     }
     
+    /**
+     * GEt the challenged post associated with the user.
+     */
+    public function challenged_post()
+    {
+        return $this->hasMany('eze\Models\Challenge', 'challenger');
+    }
+
 }
