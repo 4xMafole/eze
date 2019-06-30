@@ -1,8 +1,120 @@
+/*NB:: Before production process to showcase to the public, 
+all css files should be minified to reduce bytes, 
+in order to increase optimatization process for the page to load faster.*/
+
 body,html{
     margin:0;
     padding:0;
 	  height:100%;
   }
+
+  .landing
+  {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
+
+/*this cascading style wastes time it is expensive for the browser to run fast.*/
+  .landing > img
+  {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    opacity: 0;
+    z-index: 0;
+    -webkit-backface-visibility: hidden;
+    -webkit-animation: imageAnimation 10s linear infinite 0s;
+    -moz-animation: imageAnimation 10s linear infinite 0s;
+    -o-animation: imageAnimation 10s linear infinite 0s;
+    -ms-animation: imageAnimation 10s linear infinite 0s;
+    animation: imageAnimation 10s linear infinite 0s;    
+  }
+
+/*this cascading style wastes time it is expensive for the browser to run fast.*/
+
+  .landing > img:nth-child(1)
+  {
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    -ms-animation-delay: 0s;
+    animation-delay: 0s;    
+  }    
+
+/*this cascading style wastes time it is expensive for the browser to run fast.*/
+
+  .landing > img:nth-child(2)
+  {
+    -webkit-animation-delay: 4s;
+    -moz-animation-delay: 4s;
+    -o-animation-delay: 4s;
+    -ms-animation-delay: 4s;
+    animation-delay: 4s;    
+  }
+
+  @-webkit-keyframes imageAnimation 
+  { 
+    0% { opacity: 0;
+    -webkit-animation-timing-function: ease-in; }
+    17% { opacity: 1;
+         -webkit-animation-timing-function: ease-out; }
+    25% { opacity: 1 }
+    53% { opacity: 1 }
+    92% { opacity: 0 }
+    100% { opacity: 0 }
+    }
+
+@keyframes imageAnimation 
+{ 
+    0% { opacity: 0;
+    -webkit-animation-timing-function: ease-in; }
+    17% { opacity: 1;
+         -webkit-animation-timing-function: ease-out; }
+    25% { opacity: 1 }
+    53% { opacity: 1 }
+    92% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+@-ms-keyframes imageAnimation 
+{ 
+    0% { opacity: 0;
+    -webkit-animation-timing-function: ease-in; }
+    17% { opacity: 1;
+         -webkit-animation-timing-function: ease-out; }
+    25% { opacity: 1 }
+    53% { opacity: 1 }
+    92% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+@-o-keyframes imageAnimation 
+{ 
+    0% { opacity: 0;
+    -webkit-animation-timing-function: ease-in; }
+    17% { opacity: 1;
+         -webkit-animation-timing-function: ease-out; }
+    25% { opacity: 1 }
+    53% { opacity: 1 }
+    92% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+@-moz-keyframes imageAnimation 
+{ 
+    0% { opacity: 0;
+    -webkit-animation-timing-function: ease-in; }
+    17% { opacity: 1;
+         -webkit-animation-timing-function: ease-out; }
+    25% { opacity: 1 }
+    53% { opacity: 1 }
+    92% { opacity: 0 }
+    100% { opacity: 0 }
+}
   
   #brand 
   {
@@ -20,6 +132,7 @@ body,html{
 {
     position: relative;
     background: #d6040c;
+    background-size: cover;
     background: -moz-linear-gradient(36deg, rgba(245,86,7,1) 13%, rgba(230,151,13,1) 60%, rgba(222,220,9,1) 100%);
     background: -webkit-linear-gradient(36deg, #d6040c 13%, rgba(230,151,13,1) 60%, rgba(222,220,9,1) 100%);
     background: linear-gradient(36deg, #d6040c 13%, rgba(230,151,13,1) 60%, rgba(222,220,9,1) 100%);

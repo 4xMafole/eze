@@ -1,3 +1,7 @@
+/*NB:: Before production process to showcase to the public, 
+all css files should be minified to reduce bytes, 
+in order to increase optimatization process for the page to load faster.*/
+
 .explore
 {
 	height: 38em;
@@ -13,22 +17,34 @@
     margin-left: 25%;
 }
 
-#search-bar 
-{
-    font-family: cursive;
-    font-size: small;
-    color: #6e6e6e;
-    border-radius: 10px;
-    text-decoration-line: none;
-    padding-left: 10px;
-    background: #f3f3f3;
-    border-style: none;
-    outline-style: none;
-    box-shadow: inset 3px -2px 4px 0px #cec8c885;
-}
 
 #search
 {
 	color: #d07c80;
     cursor: default;
+}
+
+a.link
+{
+    text-decoration: none;
+    color: #333;
+}
+
+a.link:hover
+{
+    color:#dbdbdc; 
+}
+
+.search-usrs
+{
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    box-shadow: 1px 1px 7px 0px #d8d5d5;
+    cursor: default;
+}
+
+.modal a.close-modal
+{
+    display: none;
 }

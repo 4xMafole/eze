@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'eze'),
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+    'env' => env('APP_ENV', 'local'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://127.0.0.1:8000'),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -165,15 +165,16 @@ return [
         /*
          * Package Service Providers...
          */
+        Overtrue\LaravelFollow\FollowServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        eze\Providers\AppServiceProvider::class,
+        eze\Providers\AuthServiceProvider::class,
+        // eze\Providers\BroadcastServiceProvider::class,
+        eze\Providers\EventServiceProvider::class,
+        eze\Providers\RouteServiceProvider::class,
 
     ],
 
