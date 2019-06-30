@@ -1,0 +1,34 @@
+.explore
+{
+	height: 38em;
+	overflow-y: auto;
+	padding-right: 15px;
+	padding-top: 10px;
+	padding-left: 3px;	
+}
+
+.search-bar 
+{
+    margin-top: 14%;
+    margin-left: 25%;
+}
+
+#search-bar 
+{
+    font-family: cursive;
+    font-size: small;
+    color: #6e6e6e;
+    border-radius: 10px;
+    text-decoration-line: none;
+    padding-left: 10px;
+    background: #f3f3f3;
+    border-style: none;
+    outline-style: none;
+    box-shadow: inset 3px -2px 4px 0px #cec8c885;
+}
+
+#search
+{
+	color: #d07c80;
+    cursor: default;
+}

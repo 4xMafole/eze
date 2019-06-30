@@ -1,0 +1,11 @@
+$(document).ready(
+	function()
+	{
+		$("#gallery").unitegallery(
+		{
+			tiles_type:"justified",
+			tile_enable_icons:false,
+		}
+		);		
+	}
+);

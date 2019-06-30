@@ -1,0 +1,53 @@
+body
+{
+	background-color: #ffffff;
+}
+
+#brand 
+{
+    height: 90px;
+    width: 130px;
+    margin-top: -5px;
+    margin-left: -13px;
+}
+
+.nav 
+{
+    background: #ffffff;
+    height: 50px;
+    justify-content: space-evenly;
+    position: relative;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    box-shadow: 1px 2px 8px 0px #d2caca;
+}
+
+#i
+{
+	margin: auto;
+	transform: scale(1.5);
+    cursor: pointer;
+}
+
+#i:hover
+{
+	color: #d6040c;
+}
+
+.i
+{
+	color: #d6040c;
+}
+
+.control
+{
+    cursor: pointer;
+}
+
+.control:hover
+{
+    background: -webkit-gradient(linear, left top, left bottom, from(#fce818), to(#dc280e));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: initial;
+}

@@ -1,0 +1,178 @@
+body,html{
+    margin:0;
+    padding:0;
+	  height:100%;
+  }
+  
+  #brand 
+  {
+    height: 90px;
+    width: 130px;
+  }
+
+  .box
+  {
+    height:100%;
+    width:100%;
+  }
+  
+.gradDynamic 
+{
+    position: relative;
+    background: #d6040c;
+    background: -moz-linear-gradient(36deg, rgba(245,86,7,1) 13%, rgba(230,151,13,1) 60%, rgba(222,220,9,1) 100%);
+    background: -webkit-linear-gradient(36deg, #d6040c 13%, rgba(230,151,13,1) 60%, rgba(222,220,9,1) 100%);
+    background: linear-gradient(36deg, #d6040c 13%, rgba(230,151,13,1) 60%, rgba(222,220,9,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f55607",endColorstr="#dedc09",GradientType=1);
+}
+  
+.form-card 
+{
+    height: 345px;
+    width: 300px;
+    background-color: #ffffff21;
+    float: right;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top: 50px;
+  }
+
+.i
+{
+  color: #ffffff;
+}
+
+nav
+{
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+input[type="email"], input[type="password"], input[type="text"] 
+{
+    border-radius: 10px;
+    width: 245px;
+    background: #f8f9f81f;
+    outline-style: none;
+    border-style: none;
+    padding-left: 15px;
+    /*color: white;*/
+    font-family: cursive;
+    margin-bottom: 30px;
+    margin-left: 5%;
+}
+
+input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus
+{
+    box-shadow: 0px 0px 6px 0px #8585869e;
+
+}
+
+::placeholder {
+    color: #67676763;
+}
+
+#login-bn 
+{
+    /*background: white;*/
+    padding: 5px;
+    width: 60px;
+    margin-left: 33%;
+    font-family: cursive;
+    border-radius: 10px;
+}
+
+#a
+{
+  color: #eb830b;
+  text-decoration: none;
+}
+
+#forgotten 
+{
+    /*color: #ffffff;*/
+    font-size: small;
+    font-family: cursive;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 6%;
+}
+
+
+#register-bn 
+{
+    /*background: white;*/
+    padding: 5px;
+    width: 70px;
+    margin-left: 65%;
+    margin-top: -15px;
+    font-family: cursive;
+    border-radius: 10px;
+}
+
+button
+{
+    color: #eb830b;
+    text-decoration: none;
+    border-style: none;
+    background: white;
+    padding: 5px;
+    width: 70px;
+    margin-left: 65%;
+    margin-top: -15px;
+    font-family: cursive;
+    border-radius: 10px;
+}
+
+/*The laptop*/
+.laptop {
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scale(.6) translate(-56%);
+    transform: scale(.6) translate(-56%);
+    left: 50%;
+    position: absolute;
+    width: 1042px;
+    height: 657px;
+    border-radius: 18px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 24px 24px 80px;
+    background-color: #ffffff;
+}
+
+/* The keyboard of the laptop */
+.laptop:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 1140px;
+    height: 16px;
+    margin: 33px 0 0 -71px;
+    background: #ffffff;
+    border-radius: 6px;
+}
+
+/* The top of the keyboard */
+.laptop:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 7px;
+    bottom: -78px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    transform: translate(-55%);
+    background: white;
+    background: #ffffff border-bottom-left-radius: 5px border-bottom-right-radius: 5px z-index: 1;
+}
+
+/* The screen (or content) of the device */
+.laptop .content {
+    width: 1000px;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 11px;
+    border: none;
+}
