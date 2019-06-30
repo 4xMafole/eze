@@ -48,9 +48,12 @@ class AuthController extends Controller
 
     protected function postLogin(Request $request)
     {
+        // set the remember me cookie if the user check the box
+        $remember = ($request->has('remember')) ? true : false;
+
         $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt($credentials)) 
+        if (Auth::attempt($credentials,$remember)) 
         {
             // Authentication passed...
             return redirect()->intended('filter');

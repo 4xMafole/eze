@@ -14,7 +14,7 @@
 	<div class="box gradDynamic">
 		<div class="container">		
 			<div class="row">
-				<img id="brand" src="img/eze_logo.png" alt="">
+				<img id="brand" src="{{ URL::asset('img/eze_logo.png') }}" alt="">
 			</div>
 			<br>
 			<br>
@@ -22,7 +22,7 @@
 				<div class="col-md-8">
 					<div class="laptop">
 					  <div class="content">
-					    <iframe src="" style="width:100%;border:none;height:100%" >
+					    <iframe src="{{ route('landing') }}" style="width:100%;border:none;height:100%" >
 					    </iframe>
 					  </div>
 					</div>	

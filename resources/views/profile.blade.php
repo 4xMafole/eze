@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="_token" content="{{csrf_token()}}" />
+
 	<title>profile</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <script type='text/javascript' src='unitegallery/js/unitegallery.min.js'></script> 
-    <script type='text/javascript' src='unitegallery/themes/tiles/ug-theme-tiles.js'></script>
-    
-    <link rel='stylesheet' href='unitegallery/css/unite-gallery.css' type='text/css' /> 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/v4-shims.css">	
-	<link rel="stylesheet" href="css/nav.css">
-	<link rel="stylesheet" href="css/sidelit.css">
-	<link rel="stylesheet" href="css/profile.css">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+    <script type='text/javascript' src='{{ URL::asset('unitegallery/js/unitegallery.min.js') }}'></script> 
+	<script type='text/javascript' src='{{ URL::asset('unitegallery/themes/tiles/ug-theme-tiles.js') }}'></script>
+    
+	<link rel='stylesheet' href='{{ URL::asset('unitegallery/css/unite-gallery.css') }}' type='text/css' /> 
+	<link rel="stylesheet" href="{{ URL::asset('css/nav.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/sidelit.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/profile.css') }}">
 
 
 </head>
@@ -38,6 +43,7 @@
 					<i class="fas fa-pencil-alt control edit-ctrl"></i>
 
 					<i class="fas fa-cog control" style="margin-left: 80%;"></i>
+					
 					<ul class="list" style="list-style-type: none;">
 						<li>
 							<a href="{{ route('privacy') }}" rel="modal:open" class="link">Privacy</a>
@@ -57,12 +63,13 @@
 			</div>
 		</div>
 	<div id="modal-view">
+
 		<div id="shots" class="modal">
 			<div class="navigators">
 				<a href="#shots" rel="modal:open">
-					<i class="fas fa-camera nav-selector" style="float: left;"></i>
+					<i class="fas fa-camera nav-selector-active" style="float: left;"></i>
 				</a>
-				<a href="#challenge" rel="modal:open">
+				<a href="#challenges" rel="modal:open">
 					<i class="fas fa-grip-vertical nav-selector"  style="float: right;"></i>
 				</a>
 			</div>
@@ -70,83 +77,22 @@
 			<div id="nav-content">
 				<div class="nav-content">
 					<div id="gallery" style="display:none;">
-						<img alt="Image 1 Title" src="img/a.jpg"
-							data-image="img/a.jpg"
-							data-description="Image 1 Description">
-						<img alt="Image 2 Title" src="img/us.jpg"
-							data-image="img/us.jpg"
-							data-description="Image 2 Description">
-						<img alt="Image 1 Title" src="img/g.jpg"
-							data-image="img/g.jpg"
-							data-description="Image 1 Description">
-						<img alt="Image 2 Title" src="img/f.jpg"
-							data-image="img/f.jpg"
-							data-description="Image 2 Description">	
-						<img alt="Image 1 Title" src="img/c.jpg"
-							data-image="img/c.jpg"
-							data-description="Image 1 Description">
-						<img alt="Image 2 Title" src="img/d.jpg"
-							data-image="img/d.jpg"
-							data-description="Image 2 Description">
-						<img alt="Image 1 Title" src="img/h.jpg"
-							data-image="img/h.jpg"
-							data-description="Image 1 Description">
-						<img alt="Image 2 Title" src="img/opp.jpg"
-							data-image="img/opp.jpg"
-							data-description="Image 2 Description">
-
-						<img alt="Image 1 Title" src="img/a.jpg"
-							data-image="img/a.jpg"
-							data-description="Image 1 Description">
-						<img alt="Image 2 Title" src="img/us.jpg"
-							data-image="img/us.jpg"
-							data-description="Image 2 Description">
-						<img alt="Image 1 Title" src="img/g.jpg"
-							data-image="img/g.jpg"
-							data-description="Image 1 Description">
-						<img alt="Image 2 Title" src="img/f.jpg"
-							data-image="img/f.jpg"
-							data-description="Image 2 Description">	
-						<img alt="Image 1 Title" src="img/c.jpg"
-							data-image="img/c.jpg"
-							data-description="Image 1 Description">
-						<img alt="Image 2 Title" src="img/d.jpg"
-							data-image="img/d.jpg"
-							data-description="Image 2 Description">
-						<img alt="Image 1 Title" src="img/h.jpg"
-							data-image="img/h.jpg"
-							data-description="Image 1 Description">
-						<img alt="Image 2 Title" src="img/opp.jpg"
-							data-image="img/opp.jpg"
-							data-description="Image 2 Description">
-
-						<img alt="Image 1 Title" src="img/a.jpg"
-							data-image="img/a.jpg"
-							data-description="Image 1 Description">
-						<img alt="Image 2 Title" src="img/us.jpg"
-							data-image="img/us.jpg"
-							data-description="Image 2 Description">
-						<img alt="Image 1 Title" src="img/g.jpg"
-							data-image="img/g.jpg"
-							data-description="Image 1 Description">
-						<img alt="Image 2 Title" src="img/f.jpg"
-							data-image="img/f.jpg"
-							data-description="Image 2 Description">	
-						<img alt="Image 1 Title" src="img/c.jpg"
-							data-image="img/c.jpg"
-							data-description="Image 1 Description">
-						<img alt="Image 2 Title" src="img/d.jpg"
-							data-image="img/d.jpg"
-							data-description="Image 2 Description">
-						<img alt="Image 1 Title" src="img/h.jpg"
-							data-image="img/h.jpg"
-							data-description="Image 1 Description">
-						<img alt="Image 2 Title" src="img/opp.jpg"
-							data-image="img/opp.jpg"
-							data-description="Image 2 Description">																					
+						@if($post->contains(Auth::id()))
+							@foreach($user_id->post->reverse() as $shot)
+								<img alt="Image 1 Title" src="/storage/{{ $shot->post }}"
+									data-image="/storage/{{ $shot->post }}"
+									data-description="Image 1 Description">
+							@endforeach
+						@else
+							{{-- Say something here if user has no post in the shots gallary --}}
+							Gallary is empty!
+						@endif	
 					</div>
 				</div>			
 			</div>
+		</div>
+
+		<div id="challenges" class="modal">
 		</div>
 	</div>
 	{{-- username edit --}}
@@ -162,7 +108,7 @@
 			<div class="row">
 				<div class="col-md-9">
 					<div class="content">
-						<div class="profile">
+						<div class="profile" data-userid="{{ Auth::id() }}">
 
 							<form method="post" action="{{ route('avatar-edit') }}" enctype="multipart/form-data">
 								<div style="height: 0px; overflow: hidden;">
@@ -174,10 +120,12 @@
 							</form>					
 
 							<div class="user-avatar">
-
-								<img id="pro-avatar" src="/storage/{{ $avatar }}" alt="Erick Mafole">
-
-								<div class="username" align="center">
+								@if($avatar->contains(Auth::id()))
+									<img id="pro-avatar" src="/storage/{{ $user_id->avatar->avatar }}" alt="Erick Mafole">
+								@else
+									<img id="pro-avatar" src="{{ URL::asset('img/avatar.png') }}" alt="Erick Mafole">	
+								@endif
+								<div class="user-name" align="center">
 									<element>
 										{{ Auth::user()->username }}
 									</element>
@@ -190,13 +138,13 @@
 
 								<div class="row detail-number" align="center">
 									<div class="col-md-4">
-										189
+										{{ $user_id->post()->get()->count()}}
+									</div>
+									<div class="col-md-4" id="followers">
+										{{ auth()->user()->followers()->get()->count() }}
 									</div>
 									<div class="col-md-4">
-										98
-									</div>
-									<div class="col-md-4">
-										12
+										{{ $user_id->challenge_post()->get()->count() + $user_id->challenged_post()->get()->count() }}
 									</div>
 								</div>
 								<div class="row detail-name" align="center" >
@@ -211,9 +159,19 @@
 									</div>
 								</div>
 							</div>
-							<div class="follow">
-								follow
-							</div>
+
+{{-- 							<div class="follow-btn" data-userid="{{ Auth::id() }}">
+								@if(auth()->user()->isFollowing(Auth::id()))
+									<div class="following">
+										Following
+									</div>
+								@else
+									<div class="follow">
+										Follow
+									</div>
+								@endif
+							</div> --}}
+							
 						</div>
 						<div class="panel">
 							<div class="navigators">
@@ -228,7 +186,7 @@
 					</div>
 				</div>
 				<div class="col-md-3">
-					<div class="side-lit">
+{{-- 					<div class="side-lit">
 						<div class="chal-notify">
 							<div class="status">
 								<div class="row">
@@ -474,7 +432,7 @@
 								<hr>
 							</div>							
 						</div>
-					</div>
+					</div> --}}
 				</div>
 			</div>
 		</div>
