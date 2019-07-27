@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 	<meta name="viewport" content="width=device-width">
-	
+
 	<title>explore</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -16,7 +16,7 @@
     <script type='text/javascript' src='{{ URL::asset('unitegallery/themes/tiles/ug-theme-tiles.js') }}'></script>
     <script src="https://kit.fontawesome.com/3a5563d1ac.js"></script>
 
-    
+
     <link rel='stylesheet' href='{{ URL::asset('unitegallery/css/unite-gallery.css') }}' type='text/css' />
 	<link rel="stylesheet" href="{{ URL::asset('css/nav.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/sidelit.css') }}">
@@ -42,7 +42,7 @@
 
 			<div class="col-md-4">
 				<form action="" class="typeahead" role="search">
-					<div class="search-bar">					
+					<div class="search-bar">
 						<i id="search" class="fas fa-search"></i>
 
 						<input id="search-bar" type="text" name="f" placeholder="explore..." style="
@@ -55,7 +55,7 @@
 									    background: #f3f3f3;
 									    border-style: none;
 									    outline-style: none;
-									    box-shadow: inset 3px -2px 4px 0px #cec8c885;" 
+									    box-shadow: inset 3px -2px 4px 0px #cec8c885;"
 						>
 					</div>
 				</form>
@@ -76,7 +76,7 @@
 								<color style="color: pink;">o</color>
 								<color style="color: green;">r</color>
 								<color style="color: orange;">e</color>
-								&nbsp; 
+								&nbsp;
 								<color style="color: green;">t</color>
 								<color style="color: blue;">h</color>
 								<color style="color: green;">e</color>
@@ -93,7 +93,7 @@
 									{{-- here shows the user searched. --}}
 							</div>
 							{{-- <p><a href="#challenge" rel="modal:open">Fungua Modal</a></p> --}}
-							<div class="explore">							
+							<div class="explore">
 								<div id="nav-content">
 									<div class="nav-content">
 										<a href="#challenge" rel="modal:open">
@@ -101,12 +101,12 @@
 										</a>
 										<div id="gallery" style="display:none;">
 											@foreach( $posts as $post)
-												<a href="#challengeLink">
-													<img alt="Image 1 Title" src="/storage/{{ $post }}" data-image="/storage/{{ $post }}"data-description="Image 1 Description">
+												<a href="#SeeWatchButton">
+													<img alt="Image 1 Title" src="/storage/{{ $post }}" data-image="/storage/{{ $post }}"data-description="{{ $post }}">
 												</a>
 											@endforeach
 										</div>
-									</div>			
+									</div>
 								</div>
 							</div>
 							{{-- modal --}}
@@ -121,7 +121,7 @@
 					<div class="side-lit">
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>
