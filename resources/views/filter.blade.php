@@ -12,9 +12,9 @@
     <script src="https://kit.fontawesome.com/3a5563d1ac.js"></script>
 
 
-	<link rel="stylesheet" href="{{ URL::asset('css/minified/nav.css') }}">
-	<link rel="stylesheet" href="{{ URL::asset('css/minified/sidelit.css') }}">
-	<link rel="stylesheet" href="{{ URL::asset('css/minified/filter.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/nav.min.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/sidelit.min.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/filter.min.css') }}">
 
 </head>
 

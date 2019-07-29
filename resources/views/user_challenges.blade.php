@@ -5,7 +5,7 @@
 
 		<meta name="_token" content="{{csrf_token()}}" />
 
-		<link rel="stylesheet" href="{{ URL::asset('css/minified/filter.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('css/minified/filter.min.css') }}">
 	</head>
 	<body>
 		<div class="navigators">

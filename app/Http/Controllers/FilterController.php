@@ -14,11 +14,11 @@ use eze\Models\Avatar;
 
 class FilterController extends Controller
 {
-    
+
 	public function index()
 	{
 		$challenge = Challenge::all()->reverse();
-	
+
 		return view('filter')->with(['challenge' => $challenge]);
 	}
 
@@ -36,7 +36,7 @@ class FilterController extends Controller
 
 			$user_id = Auth::id();
 
-			//the file is stored into storage folder 
+			//the file is stored into storage folder
 			$new_post = $request->file('post');
 			$post_path = storage::disk('photo')->put('posts', $new_post);
 
@@ -44,7 +44,7 @@ class FilterController extends Controller
 			$posts = new Post();
 			$posts->post = $post_path;
 			$posts->user = $user_id;
-			$posts->save(); 
+			$posts->save();
 
 
 		}
@@ -108,7 +108,7 @@ class FilterController extends Controller
 		          return redirect()->action('FilterController@index');
 		        }
 		        else
-		        {     
+		        {
 		       	  //Declaring new challenge.
 		          $challenge = new Challenge;
 
@@ -122,13 +122,13 @@ class FilterController extends Controller
 			          foreach ($user_avatar as $user_avatar)
 			          {
 				          $challenge->user_avatar = $user_avatar;
-			          }	     
+			          }
 			          foreach ($user_name as $user_name)
 			          {
 				          $challenge->user_name = $user_name;
-			          } 
+			          }
 
-			   	  //challenger details  
+			   	  //challenger details
 			          $challenge->challenger_post = $challenger_post;
 			          foreach ($challenger_post_id as $challenger_post_id)
 			          {
@@ -150,8 +150,8 @@ class FilterController extends Controller
 		         $challenge->save();
 
 	       	     //redicting to the index function.
-			     return redirect()->action('FilterController@index');   
-	        
+			     return redirect()->action('FilterController@index');
+
 		        }
 
 

@@ -18,9 +18,9 @@
 
 
     <link rel='stylesheet' href='{{ URL::asset('unitegallery/css/unite-gallery.min.css') }}' type='text/css' />
-	<link rel="stylesheet" href="{{ URL::asset('css/minified/nav.css') }}">
-	<link rel="stylesheet" href="{{ URL::asset('css/minified/sidelit.css') }}">
-	<link rel="stylesheet" href="{{ URL::asset('css/minified/explore.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/nav.min.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/sidelit.min.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/explore.min.css') }}">
 
 </head>
 

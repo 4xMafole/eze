@@ -20,9 +20,9 @@
 	<script type='text/javascript' src='{{ URL::asset('unitegallery/themes/tiles/ug-theme-tiles.js') }}'></script>
 
 	<link rel='stylesheet' href='{{ URL::asset('unitegallery/css/unite-gallery.min.css') }}' type='text/css' />
-	<link rel="stylesheet" href="{{ URL::asset('css/minified/nav.css') }}">
-	<link rel="stylesheet" href="{{ URL::asset('css/minified/sidelit.css') }}">
-	<link rel="stylesheet" href="{{ URL::asset('css/minified/profile.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/nav.min.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/sidelit.min.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/profile.min.css') }}">
 
 
 </head>
