@@ -1,6 +1,4 @@
-/*NB:: Before production process to showcase to the public, 
-all css files should be minified to reduce bytes, 
-in order to increase optimatization process for the page to load faster.*/
+
 
 hr
 {
@@ -13,7 +11,7 @@ b
 	color: #00000091;
 }
 
-.side-lit 
+.side-lit
 {
     box-shadow: inset 2px -2px 9px #d6d0d0;
     height: 38em;
@@ -24,7 +22,7 @@ b
     cursor: default;
 }
 
-.avatar 
+.avatar
 {
     height: 50px;
     width: 50px;
@@ -32,7 +30,7 @@ b
     padding: 6.3%;
 }
 
-#side-avatar 
+#side-avatar
 {
     height: 45px;
     width: 45px;
@@ -54,43 +52,39 @@ b
 	background: white;
 }
 
-.chal-notify 
+.chal-notify
 {
     height: 43%;
     overflow: auto;
     padding-right: 15px;
 }
 
-.lit-notify 
+.lit-notify
 {
     height: 53%;
     overflow: auto;
     padding-right: 15px;
 }
 
-/* width */
 ::-webkit-scrollbar {
   width: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
+  box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
 }
- 
-/* Handle */
+
 ::-webkit-scrollbar-thumb {
-  background: #e4a5a5; 
+  background: #e4a5a5;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d6040c; 
+  background: #d6040c;
   border-radius: 10px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
+  background: #b30000;
 }

@@ -1,18 +1,16 @@
-/*NB:: Before production process to showcase to the public, 
-all css files should be minified to reduce bytes, 
-in order to increase optimatization process for the page to load faster.*/
+
 
 .profile
 {
 	cursor: default;
 }
 
-.user-avatar 
+.user-avatar
 {
     padding-left: 33%;
 }
 
-#pro-avatar 
+#pro-avatar
 {
     width: 300px;
     height: 300px;
@@ -33,7 +31,7 @@ in order to increase optimatization process for the page to load faster.*/
     filter: drop-shadow;
 }
 
-.user-details 
+.user-details
 {
     height: 62px;
     width: 264px;
@@ -46,14 +44,14 @@ in order to increase optimatization process for the page to load faster.*/
     padding-top: 13px;
 }
 
-.detail-name 
+.detail-name
 {
     font-size: small;
     font-family: serif;
     color: #b5b5b5;
 }
 
-.follow 
+.follow
 {
     background: #d6050d;
     height: 30px;
@@ -69,7 +67,7 @@ in order to increase optimatization process for the page to load faster.*/
     color: white;
 }
 
-.following 
+.following
 {
     background: white;
     height: 30px;
@@ -86,18 +84,18 @@ in order to increase optimatization process for the page to load faster.*/
     color: #d6040c;
 }
 
-.panel 
+.panel
 {
     padding: 5px;
     margin-top: 20px;
 }
 
-#panel 
+#panel
 {
     padding: 5px;
     margin-top: 200px;
 }
-.navigators 
+.navigators
 {
     height: 40px;
     width: 128px;
@@ -108,9 +106,9 @@ in order to increase optimatization process for the page to load faster.*/
     padding-right: 10px;
     padding-left: 10px;
     padding-top: 13px;
-}    
+}
 
-.nav-selector 
+.nav-selector
 {
     transform: scale(1.5);
 	color: #dbdbdc;
@@ -167,14 +165,13 @@ in order to increase optimatization process for the page to load faster.*/
     border-radius: 5px;
 }
 
-/*this cascading style wastes time it is expensive for the browser to run fast.*/
 
 .modal a.close-modal
 {
     display: none;
 }
 
-.setting 
+.setting
 {
     margin-top: 14%;
     margin-left: 25%;
@@ -213,24 +210,24 @@ in order to increase optimatization process for the page to load faster.*/
     display: initial;
 }
 
-#username-edit 
+#username-edit
 {
     width: 31%;
     background: #404040;
 }
-#password-edit 
-{
-    width: 31%;
-    background: #404040;
-}
-
-#avatar-edit 
+#password-edit
 {
     width: 31%;
     background: #404040;
 }
 
-input[type="text"] 
+#avatar-edit
+{
+    width: 31%;
+    background: #404040;
+}
+
+input[type="text"]
 {
     background: #404040;
     color: white;
@@ -240,7 +237,7 @@ input[type="text"]
     font-family: cursive;
 }
 
-input[type="password"] 
+input[type="password"]
 {
     background: #404040;
     color: white;
@@ -250,20 +247,20 @@ input[type="password"]
     font-family: cursive;
 }
 
-button 
+button
 {
     background: #404040;
     border-style: none;
     outline-style: none;
 }
 
-#warn 
+#warn
 {
     color: #30b546;
     font-size: x-small;
 }
 
-#notifier 
+#notifier
 {
     color: orange;
     font-size: x-small;
@@ -277,53 +274,49 @@ a.link
 
 a.link:hover
 {
-    color:#dbdbdc; 
+    color:#dbdbdc;
 }
 
-ul.list 
-{ 
+ul.list
+{
     display: none;
-    position:absolute; 
-    left:-65px; 
-    top:90px; 
+    position:absolute;
+    left:-65px;
+    top:90px;
     z-index:999;
-    margin:0; 
-    padding:2px; 
+    margin:0;
+    padding:2px;
     list-style-type: none;
-    background:#fff; 
+    background:#fff;
     color:#333;
-    -moz-border-radius:5px; 
-    -webkit-border-radius:5px; 
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
     border-radius:5px;
-    -moz-box-shadow:0 0 5px #999; 
-    -webkit-box-shadow:0 0 5px #999; 
+    -moz-box-shadow:0 0 5px #999;
+    -webkit-box-shadow:0 0 5px #999;
     box-shadow:0 0 5px #999
 }
 
-/*this cascading style wastes time it is expensive for the browser to run fast.*/
 
-ul.list li 
+ul.list li
 {
     padding:5px;
     border-bottom: solid 1px #ccc;
     font-size: smaller;
 }
 
-/*this cascading style wastes time it is expensive for the browser to run fast.*/
 
-ul.list li:hover 
-{ 
+ul.list li:hover
+{
     color:#dbdbdc;
 }
 
-/*this cascading style wastes time it is expensive for the browser to run fast.*/
 
-ul.list li:last-child 
+ul.list li:last-child
 {
- border:none 
+ border:none
 }
 
-/*setting modal style*/
 .scollable
 {
     overflow: auto;
@@ -336,4 +329,3 @@ ul.list li:last-child
 {
     padding: 25px;
 }
-
