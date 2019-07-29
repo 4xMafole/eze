@@ -11,16 +11,16 @@
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    
+
     <script src="https://kit.fontawesome.com/3a5563d1ac.js"></script>
 
-    <script type='text/javascript' src='{{ URL::asset('unitegallery/js/unitegallery.min.js') }}'></script> 
+    <script type='text/javascript' src='{{ URL::asset('unitegallery/js/unitegallery.min.js') }}'></script>
 	<script type='text/javascript' src='{{ URL::asset('unitegallery/themes/tiles/ug-theme-tiles.js') }}'></script>
-    
-	<link rel='stylesheet' href='{{ URL::asset('unitegallery/css/unite-gallery.css') }}' type='text/css' /> 
-	<link rel="stylesheet" href="{{ URL::asset('css/nav.css') }}">
-	<link rel="stylesheet" href="{{ URL::asset('css/sidelit.css') }}">
-	<link rel="stylesheet" href="{{ URL::asset('css/profile.css') }}">
+
+	<link rel='stylesheet' href='{{ URL::asset('unitegallery/css/unite-gallery.min.css') }}' type='text/css' />
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/nav.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/sidelit.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/profile.css') }}">
 
 
 </head>
@@ -34,9 +34,9 @@
 			</div>
 			<div class="col-md-4">
 				<div class="nav">
-						<i class="fas fa-compass" id="i" onclick="location='http://127.0.0.1:8000/filter'"></i>
-						<i class="fas fa-globe-africa" id="i" onclick="location='http://127.0.0.1:8000/explore'"></i>
-						<i class="fas fa-user i" id="i" onclick="location='http://127.0.0.1:8000/profile'"></i>
+						<i class="fas fa-compass" id="i" onclick="location='{{route('filter')}}'"></i>
+						<i class="fas fa-globe-africa" id="i" onclick="location='{{route('explore')}}'"></i>
+						<i class="fas fa-user i" id="i" onclick="location='{{route('profile')}}'"></i>
 				</div>
 			</div>
 			<div class="col-md-4">
@@ -44,11 +44,11 @@
 					<i class="fas fa-pencil-alt control edit-ctrl"></i>
 
 					<i class="fas fa-cog control" style="margin-left: 80%;"></i>
-					
+
 					<ul class="list" style="list-style-type: none;">
 						<li>
 							<a href="#password-edit" rel="modal:open" class="link">Change password</a>
-						</li>						
+						</li>
 						<li>
 							<a href="{{ route('privacy') }}" rel="modal:open" class="link">Privacy</a>
 						</li>
@@ -90,15 +90,15 @@
 						@else
 							{{-- Say something here if user has no post in the shots gallary --}}
 							Gallary is empty!
-						@endif	
+						@endif
 					</div>
-				</div>			
+				</div>
 			</div>
 		</div>
 
 		<div id="challenges" class="modal">
 		</div>
-		
+
 	</div>
 	{{-- username edit --}}
 	<div id="username-edit" class="modal">
@@ -139,13 +139,13 @@
 								</div>
 								<i class="fas fa-plus-square control edits" id="img-edit"></i>
 								{{ csrf_field() }}
-							</form>					
+							</form>
 
 							<div class="user-avatar">
 								@if($avatar->contains(Auth::id()))
 									<img id="pro-avatar" src="/storage/{{ $user_id->avatar->avatar }}" alt="Erick Mafole">
 								@else
-									<img id="pro-avatar" src="{{ URL::asset('img/avatar.png') }}" alt="Erick Mafole">	
+									<img id="pro-avatar" src="{{ URL::asset('img/avatar.png') }}" alt="Erick Mafole">
 								@endif
 								<div class="user-name" align="center">
 									<element>
@@ -201,7 +201,7 @@
 					<div class="side-lit">
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>

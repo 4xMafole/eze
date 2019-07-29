@@ -17,10 +17,10 @@
     <script src="https://kit.fontawesome.com/3a5563d1ac.js"></script>
 
 
-    <link rel='stylesheet' href='{{ URL::asset('unitegallery/css/unite-gallery.css') }}' type='text/css' />
-	<link rel="stylesheet" href="{{ URL::asset('css/nav.css') }}">
-	<link rel="stylesheet" href="{{ URL::asset('css/sidelit.css') }}">
-	<link rel="stylesheet" href="{{ URL::asset('css/explore.css') }}">
+    <link rel='stylesheet' href='{{ URL::asset('unitegallery/css/unite-gallery.min.css') }}' type='text/css' />
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/nav.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/sidelit.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/explore.css') }}">
 
 </head>
 
@@ -34,9 +34,9 @@
 
 			<div class="col-md-4">
 				<div class="nav">
-						<i class="fas fa-compass" id="i" onclick="location='http://127.0.0.1:8000/filter'"></i>
-						<i class="fas fa-globe-africa i" id="i" onclick="location='http://127.0.0.1:8000/explore'"></i>
-						<i class="fas fa-user" id="i" onclick="location='http://127.0.0.1:8000/profile'"></i>
+						<i class="fas fa-compass" id="i" onclick="location='{{route('filter')}}'"></i>
+						<i class="fas fa-globe-africa i" id="i" onclick="location='{{route('explore')}}'"></i>
+						<i class="fas fa-user" id="i" onclick="location='{{route('profile')}}'"></i>
 				</div>
 			</div>
 
