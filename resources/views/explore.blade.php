@@ -37,7 +37,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<img id="brand" src="{{ URL::asset('img/eze_logo_c.png') }}" alt="company logo">
+				<img id="brand" src="{{ URL::asset('img/eze_logo_c.svg') }}" alt="company logo">
 			</div>
 
 			<div class="col-md-4">
