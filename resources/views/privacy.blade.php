@@ -6,7 +6,7 @@
         <p>Effective date: <i>not confirmed</i></p>
 
 
-        <p><b>eze</b> operates the https://www.eze.com web app.</p>
+        <p><b>eze</b> operates the https://www.whyeze.com web app.</p>
 
         <p>This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
 
@@ -46,8 +46,8 @@
         </ul> --}}
 
         <h2>Use of Data</h2>
-            
-        <p>eze uses the collected data for various purposes:</p>    
+
+        <p>eze uses the collected data for various purposes:</p>
         <ul>
             <li>To provide and maintain the Service</li>
             <li>To notify you about changes to our Service</li>
@@ -83,7 +83,7 @@
         <p>We may employ third party companies and individuals to facilitate our Service ("Service Providers"), to provide the Service on our behalf, to perform Service-related services or to assist us in analyzing how our Service is used.</p>
         <p>These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
 
-         
+
 
 
     {{--                                 <h2>Links To Other Sites</h2>
@@ -105,7 +105,7 @@
         <h2>Contact Us</h2>
         <p>If you have any questions about this Privacy Policy, please contact us:</p>
         <ul>
-                <li>By email: erick.e.mafole@gmail.com</li>  
+                <li>By email: erick.e.mafole@gmail.com</li>
         </ul>
     </div>
 </div>

@@ -3,7 +3,7 @@
 	<head>
 		<meta name="viewport" content="width=device-width">
 
-		<meta name="_token" content="{{csrf_token()}}" />
+		<meta name="_token" content="{{csrf_token()}}" />		
 
 		<link rel="stylesheet" href="{{ URL::asset('css/minified/filter.min.css') }}">
 	</head>
