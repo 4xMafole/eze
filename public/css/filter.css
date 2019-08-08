@@ -1,6 +1,4 @@
-/*NB:: Before production process to showcase to the public,
-all css files should be minified to reduce bytes,
-in order to increase optimatization process for the page to load faster.*/
+
 
 .challenge-initializer
 {
@@ -41,7 +39,6 @@ in order to increase optimatization process for the page to load faster.*/
     cursor: pointer;
 }
 
-/*this cascading style wastes time it is expensive for the browser to run fast.*/
 #header .username
 {
     background: white;
@@ -79,7 +76,6 @@ in order to increase optimatization process for the page to load faster.*/
     margin-top: 7%;
 }
 
-/*this cascading style wastes time it is expensive for the browser to run fast.*/
 #post .photo
 {
     background: white;
@@ -167,7 +163,7 @@ in order to increase optimatization process for the page to load faster.*/
  padding-right: 5px;
  padding-top: 3px;
  color: #33da15;
- cursor: default;   
+ cursor: default;
 }
 
 .fly

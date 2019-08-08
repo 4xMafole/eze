@@ -2,27 +2,35 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 	<meta name="viewport" content="width=device-width">
-	
+
 	<meta name="_token" content="{{csrf_token()}}" />
+
+	<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+	<link rel="manifest" href="icons/site.webmanifest">
+	<link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#bf1d1d">
+	<meta name="msapplication-TileColor" content="#b91d47">
+	<meta name="theme-color" content="#ffffff">
 
 	<title>profile</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/v4-shims.css">	
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/v4-shims.css">
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 
-    <script type='text/javascript' src='{{ URL::asset('unitegallery/js/unitegallery.min.js') }}'></script> 
+    <script type='text/javascript' src='{{ URL::asset('unitegallery/js/unitegallery.min.js') }}'></script>
 	<script type='text/javascript' src='{{ URL::asset('unitegallery/themes/tiles/ug-theme-tiles.js') }}'></script>
-    
-	<link rel='stylesheet' href='{{ URL::asset('unitegallery/css/unite-gallery.css') }}' type='text/css' /> 
-	<link rel="stylesheet" href="{{ URL::asset('css/nav.css') }}">
-	<link rel="stylesheet" href="{{ URL::asset('css/sidelit.css') }}">
-	<link rel="stylesheet" href="{{ URL::asset('css/profile.css') }}">
+
+	<link rel='stylesheet' href='{{ URL::asset('unitegallery/css/unite-gallery.min.css') }}' type='text/css' />
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/nav.min.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/sidelit.min.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/profile.min.css') }}">
 
 
 </head>
@@ -35,9 +43,9 @@
 			</div>
 			<div class="col-md-4">
 				<div class="nav">
-						<i class="fas fa-compass" id="i" onclick="location='http://127.0.0.1:8000/filter'"></i>
-						<i class="fas fa-globe-africa" id="i" onclick="location='http://127.0.0.1:8000/explore'"></i>
-						<i class="fas fa-user " id="i" onclick="location='http://127.0.0.1:8000/profile'"></i>
+						<i class="fas fa-compass" id="i" onclick="location='{{ route('filter')}}'"></i>
+						<i class="fas fa-globe-africa" id="i" onclick="location='{{ route('explore')}}'"></i>
+						<i class="fas fa-user " id="i" onclick="location='{{ route('profile')}}'"></i>
 				</div>
 			</div>
 		</div>
@@ -65,9 +73,9 @@
 							@else
 								{{-- Say something here if user has no post in the shots gallary --}}
 								Gallary is empty!
-							@endif	
+							@endif
 						</div>
-					</div>			
+					</div>
 				</div>
 			</div>
 
@@ -88,19 +96,19 @@
 									</div>
 									<i class="fas fa-plus-square control edits" id="img-edit"></i>
 									{{ csrf_field() }}
-								</form>					
+								</form>
 
 								<div class="user-avatar">
 									@if($avatar->contains($user_id->id))
 										<img class="search-usrs" id="pro-avatar" src="/storage/{{ $user_id->avatar->avatar }}" alt="Erick Mafole">
 									@else
-										<img id="pro-avatar" src="{{ URL::asset('img/avatar.png') }}" alt="Erick Mafole">	
+										<img id="pro-avatar" src="{{ URL::asset('img/avatar.png') }}" alt="Erick Mafole">
 									@endif
 									<div class="user-name" align="center">
 										<element>
 											{{ $user_id->username }}
 										</element>
-										
+
 										<a class="link" href="#username-edit" rel="modal:open">
 											<i class="fas fa-pencil-alt control edits" id="usernm-edit"></i>
 										</a>
@@ -146,7 +154,7 @@
 										@endif
 									</div>
 								@endif
-								
+
 							</div>
 
 							@if($user_id->id != Auth::id())
@@ -170,7 +178,7 @@
 											<i class="fas fa-grip-vertical nav-selector"  style="float: right;"></i>
 										</a>
 									</div>
-								</div>							
+								</div>
 							@endif
 
 						</div>
@@ -180,6 +188,6 @@
 	</div>
 	<script src="{{ URL::asset('js/nav.js') }}"></script>
 	<script src="{{ URL::asset('js/profile.js') }}"></script>
-	
+
 </body>
 </html>
