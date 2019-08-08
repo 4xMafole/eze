@@ -1,6 +1,1 @@
-$(document).ready(
-	function()
-	{
-		$(".side-lit").load("/notification");
-	}
-);
+$(document).ready(function(){$(".side-lit").load("/notification")});

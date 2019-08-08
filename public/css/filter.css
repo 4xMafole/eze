@@ -1,6 +1,4 @@
-/*NB:: Before production process to showcase to the public, 
-all css files should be minified to reduce bytes, 
-in order to increase optimatization process for the page to load faster.*/
+
 
 .challenge-initializer
 {
@@ -18,7 +16,7 @@ in order to increase optimatization process for the page to load faster.*/
     margin-bottom: 5%;
 }
 
-.post 
+.post
 {
 	height: 500px;
     margin-bottom: 5%;
@@ -41,8 +39,7 @@ in order to increase optimatization process for the page to load faster.*/
     cursor: pointer;
 }
 
-/*this cascading style wastes time it is expensive for the browser to run fast.*/
-#header .username 
+#header .username
 {
     background: white;
     padding: 5px;
@@ -50,14 +47,14 @@ in order to increase optimatization process for the page to load faster.*/
     border-radius: 5px;
     font-size: medium;
     font-family: cursive;
-    color: #6e6e6e;    
+    color: #6e6e6e;
     margin-left: 13%;
     margin-top: -13%;
     box-shadow: 0px 0px 20px #eaeaea;
     cursor: default;
 }
 
-.username 
+.username
 {
     background: white;
     padding: 5px;
@@ -65,29 +62,28 @@ in order to increase optimatization process for the page to load faster.*/
     border-radius: 5px;
     font-size: medium;
     font-family: cursive;
-    color: #6e6e6e;    
+    color: #6e6e6e;
     margin-left: 17%;
     margin-top: -15%;
     box-shadow: 0px 0px 20px #eaeaea;
     cursor: default;
 }
 
-.photo 
+.photo
 {
     background: white;
     height: 345px;
     margin-top: 7%;
 }
 
-/*this cascading style wastes time it is expensive for the browser to run fast.*/
-#post .photo 
+#post .photo
 {
     background: white;
     height: 400px;
     margin-top: 7%;
 }
 
-#photo 
+#photo
 {
     width: 100%;
     height: 100%;
@@ -106,7 +102,7 @@ in order to increase optimatization process for the page to load faster.*/
     cursor: default;
 }
 
-#litt 
+#litt
 {
     background: #ffffff;
     width: 150px;
@@ -134,7 +130,7 @@ in order to increase optimatization process for the page to load faster.*/
     transform: scale(1.5);
     padding: 10px;
     padding-top: 15px;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 
@@ -144,7 +140,7 @@ in order to increase optimatization process for the page to load faster.*/
 	font-size: small;
 }
 
-.setting 
+.setting
 {
     margin-top: 14%;
     margin-left: 25%;
@@ -166,8 +162,8 @@ in order to increase optimatization process for the page to load faster.*/
  transform: scale(1.5);
  padding-right: 5px;
  padding-top: 3px;
- color: #33da15;     
- cursor: pointer;   
+ color: #33da15;
+ cursor: default;
 }
 
 .fly
@@ -176,6 +172,6 @@ in order to increase optimatization process for the page to load faster.*/
  transform: scale(1.5);
  padding-right: 5px;
  padding-top: 3px;
- color: #c6c6c6; 
- cursor: pointer;   
+ color: #c6c6c6;
+ cursor: pointer;
 }

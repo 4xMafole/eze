@@ -162,11 +162,13 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
         Overtrue\LaravelFollow\FollowServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        HTMLMin\HTMLMin\HTMLMinServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -227,6 +229,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'HTMLMin' => HTMLMin\HTMLMin\Facades\HTMLMin::class,
+
 
     ],
 

@@ -15,9 +15,9 @@
 							@else
 
 								<img id="side-avatar" src="{{ URL::asset('img/avatar.png') }}" alt="{{ $following_challenge[$initilizer]->username }}">
-							
+
 							@endif
-						
+
 						</div>
 					</div>
 					<div class="col-md-9">
@@ -29,7 +29,7 @@
 				<hr>
 			</div>
 
-		@endfor	
+		@endfor
 	@endforeach
 
 </div>
@@ -49,19 +49,25 @@
 							@else
 
 								<img id="side-avatar" src="{{ URL::asset('img/avatar.png') }}" alt="{{ $user_lit[$initilizer]->username }}">
-							
+
 							@endif
 						</div>
 					</div>
 					<div class="col-md-9">
 						<div class="side-status">
-							<b>{{ $user_lit[$initilizer]->username }}</b> lit your challenge
+							<b>
+								@if ($user_lit[$initilizer]->id != Auth::id())
+									{{ $user_lit[$initilizer]->username }}
+								@else
+								You
+								@endif
+							</b> lit your challenge
 						</div>
 					</div>
 				</div>
 				<hr>
-			</div>						
-		@endfor	
+			</div>
+		@endfor
 	@endforeach
-	
+
 </div>

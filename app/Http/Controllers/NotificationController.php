@@ -17,7 +17,7 @@ class NotificationController extends Controller
     	$user_lit = $this->linotify();
 
     	return view('sidelit')->with([
-    		'following_challenge' => $following_challenge, 
+    		'following_challenge' => $following_challenge,
     		'user_lit' => $user_lit]);
     }
 

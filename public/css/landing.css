@@ -1,6 +1,4 @@
-/*NB:: Before production process to showcase to the public, 
-all css files should be minified to reduce bytes, 
-in order to increase optimatization process for the page to load faster.*/
+
 
 body,html{
     margin:0;
@@ -15,7 +13,6 @@ body,html{
     background-size: cover;
   }
 
-/*this cascading style wastes time it is expensive for the browser to run fast.*/
   .landing > img
   {
     width: 100%;
@@ -31,10 +28,9 @@ body,html{
     -moz-animation: imageAnimation 10s linear infinite 0s;
     -o-animation: imageAnimation 10s linear infinite 0s;
     -ms-animation: imageAnimation 10s linear infinite 0s;
-    animation: imageAnimation 10s linear infinite 0s;    
+    animation: imageAnimation 10s linear infinite 0s;
   }
 
-/*this cascading style wastes time it is expensive for the browser to run fast.*/
 
   .landing > img:nth-child(1)
   {
@@ -42,10 +38,9 @@ body,html{
     -moz-animation-delay: 0s;
     -o-animation-delay: 0s;
     -ms-animation-delay: 0s;
-    animation-delay: 0s;    
-  }    
+    animation-delay: 0s;
+  }
 
-/*this cascading style wastes time it is expensive for the browser to run fast.*/
 
   .landing > img:nth-child(2)
   {
@@ -53,11 +48,11 @@ body,html{
     -moz-animation-delay: 4s;
     -o-animation-delay: 4s;
     -ms-animation-delay: 4s;
-    animation-delay: 4s;    
+    animation-delay: 4s;
   }
 
-  @-webkit-keyframes imageAnimation 
-  { 
+  @-webkit-keyframes imageAnimation
+  {
     0% { opacity: 0;
     -webkit-animation-timing-function: ease-in; }
     17% { opacity: 1;
@@ -68,8 +63,8 @@ body,html{
     100% { opacity: 0 }
     }
 
-@keyframes imageAnimation 
-{ 
+@keyframes imageAnimation
+{
     0% { opacity: 0;
     -webkit-animation-timing-function: ease-in; }
     17% { opacity: 1;
@@ -80,8 +75,8 @@ body,html{
     100% { opacity: 0 }
 }
 
-@-ms-keyframes imageAnimation 
-{ 
+@-ms-keyframes imageAnimation
+{
     0% { opacity: 0;
     -webkit-animation-timing-function: ease-in; }
     17% { opacity: 1;
@@ -92,8 +87,8 @@ body,html{
     100% { opacity: 0 }
 }
 
-@-o-keyframes imageAnimation 
-{ 
+@-o-keyframes imageAnimation
+{
     0% { opacity: 0;
     -webkit-animation-timing-function: ease-in; }
     17% { opacity: 1;
@@ -104,8 +99,8 @@ body,html{
     100% { opacity: 0 }
 }
 
-@-moz-keyframes imageAnimation 
-{ 
+@-moz-keyframes imageAnimation
+{
     0% { opacity: 0;
     -webkit-animation-timing-function: ease-in; }
     17% { opacity: 1;
@@ -115,8 +110,8 @@ body,html{
     92% { opacity: 0 }
     100% { opacity: 0 }
 }
-  
-  #brand 
+
+  #brand
   {
     height: 90px;
     width: 130px;
@@ -127,8 +122,8 @@ body,html{
     height:100%;
     width:100%;
   }
-  
-.gradDynamic 
+
+.gradDynamic
 {
     position: relative;
     background: #d6040c;
@@ -138,8 +133,8 @@ body,html{
     background: linear-gradient(36deg, #d6040c 13%, rgba(230,151,13,1) 60%, rgba(222,220,9,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f55607",endColorstr="#dedc09",GradientType=1);
 }
-  
-.form-card 
+
+.form-card
 {
     height: 345px;
     width: 300px;
@@ -161,7 +156,7 @@ nav
   margin-bottom: 15px;
 }
 
-input[type="email"], input[type="password"], input[type="text"] 
+input[type="email"], input[type="password"], input[type="text"]
 {
     border-radius: 10px;
     width: 245px;
@@ -185,9 +180,8 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
     color: #67676763;
 }
 
-#login-bn 
+#login-bn
 {
-    /*background: white;*/
     padding: 5px;
     width: 60px;
     margin-left: 33%;
@@ -201,9 +195,8 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
   text-decoration: none;
 }
 
-#forgotten 
+#forgotten
 {
-    /*color: #ffffff;*/
     font-size: small;
     font-family: cursive;
     cursor: pointer;
@@ -212,9 +205,8 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 }
 
 
-#register-bn 
+#register-bn
 {
-    /*background: white;*/
     padding: 5px;
     width: 70px;
     margin-left: 65%;
@@ -237,7 +229,6 @@ button
     border-radius: 10px;
 }
 
-/*The laptop*/
 .laptop {
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
@@ -254,7 +245,6 @@ button
     background-color: #ffffff;
 }
 
-/* The keyboard of the laptop */
 .laptop:after {
     content: '';
     display: block;
@@ -266,7 +256,6 @@ button
     border-radius: 6px;
 }
 
-/* The top of the keyboard */
 .laptop:before {
     content: '';
     display: block;
@@ -281,7 +270,6 @@ button
     background: #ffffff border-bottom-left-radius: 5px border-bottom-right-radius: 5px z-index: 1;
 }
 
-/* The screen (or content) of the device */
 .laptop .content {
     width: 1000px;
     height: 600px;
