@@ -169,6 +169,7 @@ return [
         Overtrue\LaravelFollow\FollowServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         HTMLMin\HTMLMin\HTMLMinServiceProvider::class,
+        Buglinjo\LaravelWebp\WebpServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -230,6 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'HTMLMin' => HTMLMin\HTMLMin\Facades\HTMLMin::class,
+        'Webp' => Buglinjo\LaravelWebp\Facades\Webp::class,
 
 
     ],
