@@ -11,23 +11,28 @@
 |
 */
 
+//Testing routes
+Route::get('/testing', 'TestingController@index')->name('testing');
+Route::post('/testing', 'TestingController@image')->name('testingUpload');
+//Testing routes
+
 //everyone routes
 	Route::get('/privacy', 'SettingController@privacy')->name('privacy');
 	Route::get('/terms&conditions', 'SettingController@terms')->name('terms');
 	Route::get('/aboutus', 'SettingController@aboutus')->name('aboutus');
 
 //guest routes
-	Route::get('/', function () 
+	Route::get('/', function ()
 	{
 	    return view('index');
 	})->name('index')->middleware('guest');
 
-	Route::get('/form', function() 
+	Route::get('/form', function()
 	{
 		return view('form');
 	})->middleware('guest');
 
-	Route::get('/landing', function() 
+	Route::get('/landing', function()
 	{
 		return view('landing');
 	})->name('landing')->middleware('guest');
@@ -50,7 +55,7 @@
 
 
 //authenticated users routes
-	//explore 
+	//explore
 	Route::get('/explore','ExploreController@index' )->name('explore')->middleware('auth');
 		//searching user
 		Route::get('/explore/find', 'SearchController@query')->name('search')->middleware('auth');
@@ -63,13 +68,13 @@
 		//flying
 		Route::post('/post/fly', 'ExploreController@fly')->middleware('auth');
 
-	//home || filter 
+	//home || filter
 	Route::get('/home', 'FilterController@index')->name('filter')->middleware('auth');
 
 	//filter
 	Route::get('/filter', 'FilterController@index')->name('filter')->middleware('auth');
 		//post uploader
-		Route::post('/filter/post', 'FilterController@poster')->name('poster')->middleware('auth');	
+		Route::post('/filter/post', 'FilterController@poster')->name('poster')->middleware('auth');
 		//challenger uploader
 		Route::post('/filter/challenge', 'FilterController@challenge')->name('challenge')->middleware('auth');
 
@@ -89,12 +94,10 @@
 		Route::post('/profile/lit', 'ProfileController@lit')->name('lit')->middleware('auth');
 		//change password
 		Route::get('/profile/password', 'ProfileController@password')->middleware('auth');
-		
+
 		Route::post('/profile/changepd', 'ProfileController@changePassword')->name('changePassword')->middleware('auth');
 		//logout
 		Route::get('/profile/logout', 'ProfileController@logout')->name('logout')->middleware('auth');
 
 	//sidelit
 	Route::get('/notification', 'NotificationController@index')->name('sidelit')->middleware('auth');
-
-
