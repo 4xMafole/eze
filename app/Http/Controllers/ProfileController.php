@@ -7,6 +7,7 @@ use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 use Validator;
 use Auth;
+use Webp;
 use eze\Models\User;
 use eze\Models\Avatar;
 use eze\Models\Post;
@@ -62,17 +63,25 @@ class ProfileController extends Controller
                 ]
             );
 
+            //user Id
             $user = Auth::id();
 
             $new_avatar = $request->file('avatar');
             $avatar_path = Storage::disk('photo')->putFile('avatars', $new_avatar);
 
-            //checks if the user has uploaded a profile avatar
-            //if yes- the latest one gets added while the old one
+            //The next photo - generation implementations (WEBP)
+            $avatarName = $new_avatar->getClientOriginalName();
+            $avatarInfo = pathinfo($avatarName);
+            $avatarWithoutExt = basename($avatarName, '.'.$avatarInfo['extension']);
+            $avatarWebp = Webp::make($new_avatar)->quality(75);
+            $avatarWebpPath = Storage::disk('webp')->makeDirectory('avatars/');
+            $avatarWebp->save(storage_path('/app/public/webp/'.$avatar_path));
+
             if (User::find($user)->avatar) 
             {
 
               Storage::disk('photo')->delete(User::find($user)->avatar->avatar);
+              Storage::disk('webp')->delete(User::find($user)->avatar->avatar);
               $user_avatar = User::find($user)->avatar;
               $user_avatar->avatar = $avatar_path; 
               $user_avatar->save();
@@ -92,7 +101,6 @@ class ProfileController extends Controller
 
             }
 
-            // Storage::disk('photo')->putFile('avatars', $new_avatar);
         }
 
 
@@ -295,29 +303,5 @@ class ProfileController extends Controller
                     $user->save();
                 }
         }
-
-    //password
-        // public function checkPassword($current_password, $new_password)
-        // {
-
-
-        //         if (!(\Hash::check($current_password, Auth::user()->password))) 
-        //         {
-        //             $c_error = "Current password does not match the old password.";
-        //             // The passwords matches
-        //             return response()->json(['c_error' => $c_error]);
-        //         }
-
-        //         elseif(strcmp($current_password, $new_password) == 0)
-        //         {
-        //             $n_error = "New password cannot be the same as your current password.";
-        //             //Current password and new password are same
-        //             return response()->json(['n_error' => $n_error]);
-        //         }
-        //         else
-        //         {
-        //             return;
-        //         }    
-        // }        
 
 }

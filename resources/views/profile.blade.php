@@ -151,7 +151,10 @@
 
 							<div class="user-avatar">
 								@if($avatar->contains(Auth::id()))
-									<img id="pro-avatar" src="/storage/{{ $user_id->avatar->avatar }}" alt="Erick Mafole">
+									<picture>
+										<source id="pro-avatar" type="image/webp" srcset="/storage/webp/{{ $user_id->avatar->avatar }}">
+										<img id="pro-avatar" src="/storage/{{ $user_id->avatar->avatar }}" alt="Erick Mafole">
+									</picture>
 								@else
 									<img id="pro-avatar" src="{{ URL::asset('img/avatar.png') }}" alt="Erick Mafole">
 								@endif
