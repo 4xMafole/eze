@@ -7,6 +7,7 @@ use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 
 use Auth;
+use Webp;
 use eze\Models\User;
 use eze\Models\Post;
 use eze\Models\Challenge;
@@ -34,11 +35,20 @@ class FilterController extends Controller
 				]
 			);
 
+			//user id
 			$user_id = Auth::id();
 
 			//the file is stored into storage folder
 			$new_post = $request->file('post');
 			$post_path = storage::disk('photo')->put('posts', $new_post);
+
+            //The next photo - generation implementations (WEBP)
+            $postName = $new_post->getClientOriginalName();
+            $postInfo = pathinfo($postName);
+            $postWithoutExt = basename($postName, '.'.$postInfo['extension']);
+            $postWebp = Webp::make($new_post)->quality(75);
+            $postWebpPath = Storage::disk('webp')->makeDirectory('posts/');
+            $postWebp->save(storage_path('/app/public/webp/'.$post_path));			
 
 			//the file is stored into the database for further processing
 			$posts = new Post();

@@ -88,7 +88,10 @@
 														<div class="card-avatar">
 															@if($challenge->user_avatar != null)
 																<a href="explore/{{ $challenge->user }}">
-																	<img id="avatar" src="/storage/{{ $challenge->user_avatar }}">
+																	<picture>
+																		<source type="image/webp" srcset="/storage/webp/{{ $challenge->user_avatar }}">
+																		<img id="avatar" src="/storage/{{ $challenge->user_avatar }}">
+																	</picture>
 																</a>
 															@else
 																<a href="explore/{{ $challenge->user }}">
@@ -99,7 +102,10 @@
 														<div class="username">{{ $challenge->user_name }}</div>
 													</div>
 													<div class="photo">
-														<img src="/storage/{{ $challenge->user_post }}" alt="" id="photo">
+														<picture>
+															<source type="image/webp" srcset="/storage/webp/{{ $challenge->user_post }}">
+															<img src="/storage/{{ $challenge->user_post }}" alt="" id="photo">
+														</picture>
 													</div>
 												</div>
 											</div>
@@ -136,7 +142,10 @@
 														<div class="card-avatar">
 															@if ($challenge->challenger_avatar != null)
 																<a href="explore/{{ $challenge->challenger }}">
-																	<img id="avatar" src="/storage/{{ $challenge->challenger_avatar }}" alt="">
+																	<picture>
+																		<source type="image/webp" srcset="/storage/webp/{{ $challenge->challenger_avatar }}">
+																		<img id="avatar" src="/storage/{{ $challenge->challenger_avatar }}" alt="">
+																	</picture>
 																</a>
 															@else
 																<a href="explore/{{ $challenge->challenger }}">
@@ -147,7 +156,10 @@
 														<div class="username">{{ $challenge->challenger_name }}</div>
 													</div>
 													<div class="photo">
-														<img id="photo" src="/storage/{{ $challenge->challenger_post }}" alt="">
+														<picture>
+															<source type="image/webp" srcset="/storage/webp/{{ $challenge->challenger_post }}">
+															<img id="photo" src="/storage/{{ $challenge->challenger_post }}" alt="">
+														</picture>
 													</div>
 												</div>
 											</div>

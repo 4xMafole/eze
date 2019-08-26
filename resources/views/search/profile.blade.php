@@ -66,9 +66,12 @@
 						<div id="gallery" style="display:none;">
 							@if($post->contains($user_id->id))
 								@foreach($user_id->post->reverse() as $shot)
-									<img alt="Image 1 Title" src="/storage/{{ $shot->post }}"
-										data-image="/storage/{{ $shot->post }}"
-										data-description="Image 1 Description">
+									{{-- <picture>
+										<source type="image/webp" srcset="/storage/webp/{{ $shot->post }}" data-image="/storage/webp/{{ $shot->post }}">
+ --}}										<img alt="Image 1 Title" src="/storage/{{ $shot->post }}"
+											data-image="/storage/{{ $shot->post }}"
+											data-description="Image 1 Description">
+									{{-- </picture> --}}
 								@endforeach
 							@else
 								{{-- Say something here if user has no post in the shots gallary --}}
@@ -100,9 +103,12 @@
 
 								<div class="user-avatar">
 									@if($avatar->contains($user_id->id))
-										<img class="search-usrs" id="pro-avatar" src="/storage/{{ $user_id->avatar->avatar }}" alt="Erick Mafole">
+										<picture>
+											<source type="image/webp" srcset="/storage/webp/{{ $user_id->avatar->avatar }}">
+											<img class="search-usrs" id="pro-avatar" src="/storage/{{ $user_id->avatar->avatar }}" alt="{{ $user_id->username }}">
+										</picture>
 									@else
-										<img id="pro-avatar" src="{{ URL::asset('img/avatar.png') }}" alt="Erick Mafole">
+										<img id="pro-avatar" src="{{ URL::asset('img/avatar.png') }}" alt="{{ $user_id->username }}">
 									@endif
 									<div class="user-name" align="center">
 										<element>

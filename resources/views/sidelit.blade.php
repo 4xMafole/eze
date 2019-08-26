@@ -10,7 +10,10 @@
 
 							@if($following_challenge[$initilizer]->avatar != null)
 
-								<img id="side-avatar" src="/storage/{{ $following_challenge[$initilizer]->avatar->avatar }}" alt="{{ $following_challenge[$initilizer]->username }}">
+								<picture>
+									<source type="image/webp" srcset="/storage/webp/{{ $following_challenge[$initilizer]->avatar->avatar }}">
+									<img id="side-avatar" src="/storage/{{ $following_challenge[$initilizer]->avatar->avatar }}" alt="{{ $following_challenge[$initilizer]->username }}">
+								</picture>
 
 							@else
 
@@ -43,8 +46,11 @@
 					<div class="col-md-3">
 						<div class="avatar">
 							@if($user_lit[$initilizer]->avatar != null)
-
-								<img id="side-avatar" src="/storage/{{ $user_lit[$initilizer]->avatar->avatar }}" alt="{{ $user_lit[$initilizer]->username }}">
+								
+								<picture>
+									<source type="image/webp" srcset="/storage/webp/{{ $user_lit[$initilizer]->avatar->avatar }}">
+									<img id="side-avatar" src="/storage/{{ $user_lit[$initilizer]->avatar->avatar }}" alt="{{ $user_lit[$initilizer]->username }}">
+								</picture>
 
 							@else
 
