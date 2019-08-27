@@ -110,7 +110,7 @@
 										<div id="gallery" style="display:none;">
 											@foreach( $posts as $post)
 												<a href="#SeeWatchButton">
-													<img alt="Image 1 Title" src="/storage/{{ $post }}" data-image="/storage/{{ $post }}"data-description="{{ $post }}">
+													<img alt="Image 1 Title" srcset="/storage/webp/{{ $post }}" src="/storage/{{ $post }}"  data-image="/storage/webp/{{ $post }}"data-description="{{ $post }}">
 												</a>
 											@endforeach
 										</div>
