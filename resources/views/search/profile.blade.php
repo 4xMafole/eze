@@ -13,7 +13,7 @@
 	<meta name="msapplication-TileColor" content="#b91d47">
 	<meta name="theme-color" content="#ffffff">
 
-	<title>profile</title>
+	<title>{{ $user_id->username }}'s Profile</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
@@ -31,61 +31,62 @@
 	<link rel="stylesheet" href="{{ URL::asset('css/minified/nav.min.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/minified/sidelit.min.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/minified/profile.min.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/minified/content_placeholder.min.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/nprogress.css') }}">
+
 
 
 </head>
 
 <body>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4">
-				<img id="brand" src="{{ URL::asset('img/eze_logo_c.svg') }}" alt="company logo">
-			</div>
-			<div class="col-md-4">
-				<div class="nav">
-						<i class="fas fa-compass" id="i" onclick="location='{{ route('filter')}}'"></i>
-						<i class="fas fa-globe-africa" id="i" onclick="location='{{ route('explore')}}'"></i>
-						<i class="fas fa-user " id="i" onclick="location='{{ route('profile')}}'"></i>
+	<div class="page" style="display: none;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<img id="brand" src="{{ URL::asset('img/eze_logo_c.svg') }}" alt="company logo">
 				</div>
-			</div>
-		</div>
-		<div id="modal-view">
-
-			<div id="shots" class="modal">
-				<div class="navigators">
-					<a href="#shots" rel="modal:open">
-						<i class="fas fa-camera nav-selector-active" style="float: left;"></i>
-					</a>
-					<a href="#challenge" rel="modal:open">
-						<i class="fas fa-grip-vertical nav-selector"  style="float: right;"></i>
-					</a>
-				</div>
-				<br>
-				<div id="nav-content">
-					<div class="nav-content">
-						<div id="gallery" style="display:none;">
-							@if($post->contains($user_id->id))
-								@foreach($user_id->post->reverse() as $shot)
-									{{-- <picture>
-										<source type="image/webp" srcset="/storage/webp/{{ $shot->post }}" data-image="/storage/webp/{{ $shot->post }}">
- --}}										<img alt="Image 1 Title" src="/storage/{{ $shot->post }}"
-											data-image="/storage/{{ $shot->post }}"
-											data-description="Image 1 Description">
-									{{-- </picture> --}}
-								@endforeach
-							@else
-								{{-- Say something here if user has no post in the shots gallary --}}
-								Gallary is empty!
-							@endif
-						</div>
+				<div class="col-md-4">
+					<div class="nav">
+							<i class="fas fa-compass" id="i" onclick="location='{{ route('filter')}}'"></i>
+							<i class="fas fa-globe-africa" id="i" onclick="location='{{ route('explore')}}'"></i>
+							<i class="fas fa-user " id="i" onclick="location='{{ route('profile')}}'"></i>
 					</div>
 				</div>
 			</div>
+			<div id="modal-view">
 
-			<div id="challenge" class="modal">
+				<div id="shots" class="modal">
+					<div class="navigators">
+						<a href="#shots" rel="modal:open">
+							<i class="fas fa-camera nav-selector-active" style="float: left;"></i>
+						</a>
+						<a href="#challenge" rel="modal:open">
+							<i class="fas fa-grip-vertical nav-selector"  style="float: right;"></i>
+						</a>
+					</div>
+					<br>
+					<div id="nav-content">
+						<div class="nav-content">
+							<div id="gallery" style="display:none;">
+								@if($post->contains($user_id->id))
+									@foreach($user_id->post->reverse() as $shot)
+											<img alt="Image 1 Title" src="/storage/{{ $shot->post }}"
+												data-image="/storage/{{ $shot->post }}"
+												data-description="Image 1 Description">
+									@endforeach
+								@else
+									{{-- Say something here if user has no post in the shots gallary --}}
+									Gallery is empty!
+								@endif
+							</div>
+						</div>
+					</div>
+				</div>
 
+				<div id="challenge" class="modal">
+
+				</div>
 			</div>
-		</div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-9">
@@ -191,9 +192,87 @@
 					</div>
 				</div>
 			</div>
+		</div>
 	</div>
+
+	<div class="page-placeholder">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<span id="brand" class="content-placeholder" style="height: 50px; width: 50px; margin-top: 5px; margin-left: -13px; border-radius: 2em;"></span>
+				</div>
+				<div class="col-md-4">
+					<div class="nav" style="box-shadow: none;">
+							<span id="i-placeholder" class="content-placeholder" style="height: 30px; width: 30px; margin-top: 10px; border-radius: 2em;"></span>
+							<span id="i-placeholder" class="content-placeholder" style="height: 30px; width: 30px; margin-top: 10px; border-radius: 2em;"></span>
+							<span id="i-placeholder" class="content-placeholder" style="height: 30px; width: 30px; margin-top: 10px; border-radius: 2em;"></span>
+					</div>
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9">
+						<div class="content">
+							<div class="profile">
+								<div class="user-avatar">
+									<span id="pro-avatar" class="content-placeholder" style="box-shadow: none;"></span>
+								</div>
+								<div class="user-details" style="box-shadow: none;">
+
+									<div class="row detail-number" align="center">
+										<div class="col-md-4">
+											<span class="content-placeholder" style="height: 10px; width: 20px; border-radius: 2em;"></span>
+										</div>
+										<div class="col-md-4" id="followers">
+											<span class="content-placeholder" style="height: 10px; width: 20px; border-radius: 2em;"></span>
+										</div>
+										<div class="col-md-4">
+											<span class="content-placeholder" style="height: 10px; width: 20px; border-radius: 2em;"></span>
+										</div>
+									</div>
+									<div class="row detail-name" align="center" >
+										<div class="col-md-4">
+											<span class="content-placeholder" style="height: 10px; width: 35px; border-radius: 2em;"></span>
+										</div>
+										<div class="col-md-4">
+											<span class="content-placeholder" style="height: 10px; width: 35px; border-radius: 2em;"></span>
+										</div>
+										<div class="col-md-4">
+											<span class="content-placeholder" style="height: 10px; width: 35px; border-radius: 2em;"></span>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div class="panel">
+								<div class="navigators" style="box-shadow: none;">
+									<span class="content-placeholder" style="height: 24px; width: 24px; border-radius: 0px; float: right; border-radius: 3px;"></span>	
+									<span class="content-placeholder" style="height: 24px; width: 24px; border-radius: 0px; float: left; border-radius: 3px;"></span>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+
 	<script src="{{ URL::asset('js/nav.js') }}"></script>
 	<script src="{{ URL::asset('js/profile.js') }}"></script>
+	<script src="{{ URL::asset('js/nprogress.js') }}"></script>
+	<script>
+		$(document).ready(
+			function()
+			{
+				$(".page-placeholder").css({'display' : 'none'});
+				$(".page").css({'display' : ''});
+			}
+		);
 
+		NProgress.start();
+		NProgress.done();		
+	</script>
 </body>
 </html>
