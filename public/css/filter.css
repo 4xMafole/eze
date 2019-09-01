@@ -37,6 +37,7 @@
     width: 60px;
     border-radius: 30px;
     cursor: pointer;
+    background: #f3f3f3;
 }
 
 #header .username
@@ -71,14 +72,14 @@
 
 .photo
 {
-    background: white;
+    background: #f3f3f3;
     height: 345px;
     margin-top: 7%;
 }
 
 #post .photo
 {
-    background: white;
+    background: #f3f3f3;
     height: 400px;
     margin-top: 7%;
 }
