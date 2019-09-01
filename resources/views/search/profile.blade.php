@@ -70,7 +70,7 @@
 							<div id="gallery" style="display:none;">
 								@if($post->contains($user_id->id))
 									@foreach($user_id->post->reverse() as $shot)
-											<img alt="Image 1 Title" src="/storage/{{ $shot->post }}"
+											<img class="b-lazy" alt="Image 1 Title" data-src="/storage/{{ $shot->post }}"
 												data-image="/storage/{{ $shot->post }}"
 												data-description="Image 1 Description">
 									@endforeach
@@ -262,17 +262,7 @@
 	<script src="{{ URL::asset('js/nav.js') }}"></script>
 	<script src="{{ URL::asset('js/profile.js') }}"></script>
 	<script src="{{ URL::asset('js/nprogress.js') }}"></script>
-	<script>
-		$(document).ready(
-			function()
-			{
-				$(".page-placeholder").css({'display' : 'none'});
-				$(".page").css({'display' : ''});
-			}
-		);
-
-		NProgress.start();
-		NProgress.done();		
-	</script>
+	<script src="{{ URL::asset('js/minified/blazy.min.js') }}"></script>
+	<script src="{{ URL::asset('js/main.js') }}"></script>	
 </body>
 </html>

@@ -41,7 +41,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-					<img id="brand" src="img/eze_logo_c.svg" alt="company logo">
+					<img id="brand" src="{{ URL::asset('img/eze_logo_c.svg') }}" alt="company logo">
 				</div>
 				<div class="col-md-4">
 					<div class="nav">
@@ -94,12 +94,9 @@
 							<div id="gallery" style="display:none;">
 								@if($post->contains(Auth::id()))
 									@foreach($user_id->post->reverse() as $shot)
-										{{-- <picture> --}}
-											{{-- <source type="image/webp" srcset="/storage/webp/{{ $shot->post }}"> --}}
 											<img alt="Image 1 Title" src="/storage/{{ $shot->post }}"
 												data-image="/storage/{{ $shot->post }}"
 												data-description="Image 1 Description">
-										{{-- </picture> --}}
 									@endforeach
 								@else
 									{{-- Say something here if user has no post in the shots gallary --}}
@@ -163,7 +160,7 @@
 											<img id="pro-avatar" src="/storage/{{ $user_id->avatar->avatar }}" alt="">
 										</picture>
 									@else
-										<img id="pro-avatar" src="{{ URL::asset('img/avatar.png') }}" alt="">
+										<img id="pro-avatar"  src="{{ URL::asset('img/avatar.png') }}" alt="">
 									@endif
 									<div class="user-name" align="center">
 										<element>

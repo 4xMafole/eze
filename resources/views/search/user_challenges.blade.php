@@ -6,6 +6,7 @@
 		<meta name="_token" content="{{csrf_token()}}" />
 
 		<link rel="stylesheet" href="{{ URL::asset('css/minified/filter.min.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
 	</head>
 	<body>
 		<div class="navigators">
@@ -40,19 +41,19 @@
 											<div class="card-avatar">
 												@if($challenge->user_avatar != null)
 													<picture>
-														<source type="image/webp" srcset="/storage/webp/{{ $challenge->user_avatar }}">
-														<img id="avatar" src="/storage/{{ $challenge->user_avatar }}">
+														<source type="image/webp" data-srcset="/storage/webp/{{ $challenge->user_avatar }}">
+														<img class="b-lazy" id="avatar" data-src="/storage/{{ $challenge->user_avatar }}">
 													</picture>
 												@else
-													<img id="avatar" src="{{ URL::asset('img/avatar.jpg') }}" alt="">
+													<img  class="b-lazy" id="avatar" data-src="{{ URL::asset('img/avatar.jpg') }}" alt="">
 												@endif
 											</div>
 											<div class="username">{{ $challenge->user_name }}</div>
 										</div>
 										<div class="photo">
 											<picture>
-												<source type="image/webp" srcset="/storage/webp/{{ $challenge->user_post }}">
-												<img src="/storage/{{ $challenge->user_post }}" alt="" id="photo">
+												<source type="image/webp" data-srcset="/storage/webp/{{ $challenge->user_post }}">
+												<img class="b-lazy" data-src="/storage/{{ $challenge->user_post }}" alt="" id="photo">
 											</picture>
 										</div>
 									</div>
@@ -90,19 +91,19 @@
 											<div class="card-avatar">
 												@if ($challenge->challenger_avatar != null)
 													<picture>
-														<source type="image/webp" srcset="/storage/webp/{{ $challenge->challenger_avatar }}">
-														<img id="avatar" src="/storage/{{ $challenge->challenger_avatar }}" alt="">
+														<source type="image/webp" data-srcset="/storage/webp/{{ $challenge->challenger_avatar }}">
+														<img class="b-lazy" id="avatar" data-src="/storage/{{ $challenge->challenger_avatar }}" alt="">
 													</picture>
 												@else
-													<img id="avatar" src="{{ URL::asset('img/avatar.jpg') }}" alt="">
+													<img class="b-lazy" id="avatar" data-src="{{ URL::asset('img/avatar.jpg') }}" alt="">
 												@endif
 											</div>
 											<div class="username">{{ $challenge->challenger_name }}</div>
 										</div>
 										<div class="photo">
 											<picture>
-												<source type="image/webp" srcset="/storage/webp/{{ $challenge->challenger_post }}">
-												<img id="photo" src="/storage/{{ $challenge->challenger_post }}" alt="">
+												<source type="image/webp" data-srcset="/storage/webp/{{ $challenge->challenger_post }}">
+												<img class="b-lazy" id="photo" data-src="/storage/{{ $challenge->challenger_post }}" alt="">
 											</picture>
 										</div>
 									</div>
@@ -131,19 +132,19 @@
 											<div class="card-avatar">
 												@if($challenge->user_avatar != null)
 													<picture>
-														<source type="image/webp" srcset="/storage/webp/{{ $challenge->user_avatar }}">
-														<img id="avatar" src="/storage/{{ $challenge->user_avatar }}">
+														<source type="image/webp" data-srcset="/storage/webp/{{ $challenge->user_avatar }}">
+														<img class="b-lazy" id="avatar" data-src="/storage/{{ $challenge->user_avatar }}">
 													</picture>
 												@else
-													<img id="avatar" src="{{ URL::asset('img/avatar.jpg') }}" alt="">
+													<img class="b-lazy" id="avatar" data-src="{{ URL::asset('img/avatar.jpg') }}" alt="">
 												@endif
 											</div>
 											<div class="username">{{ $challenge->user_name }}</div>
 										</div>
 										<div class="photo">
 											<picture>
-												<source type="image/webp" srcset="/storage/webp/{{ $challenge->user_post }}">
-												<img src="/storage/{{ $challenge->user_post }}" alt="" id="photo">
+												<source type="image/webp" data-srcset="/storage/webp/{{ $challenge->user_post }}">
+												<img class="b-lazy" data-src="/storage/{{ $challenge->user_post }}" alt="" id="photo">
 											</picture>
 										</div>
 									</div>
@@ -181,19 +182,19 @@
 											<div class="card-avatar">
 												@if ($challenge->challenger_avatar != null)
 													<picture>
-														<source type="image/webp" srcset="/storage/webp/{{ $challenge->challenger_avatar }}">
-														<img id="avatar" src="/storage/{{ $challenge->challenger_avatar }}" alt="">
+														<source type="image/webp" data-srcset="/storage/webp/{{ $challenge->challenger_avatar }}">
+														<img class="b-lazy" id="avatar" data-src="/storage/{{ $challenge->challenger_avatar }}" alt="">
 													</picture>
 												@else
-													<img id="avatar" src="{{ URL::asset('img/avatar.jpg') }}" alt="">
+													<img class="b-lazy" id="avatar" data-src="{{ URL::asset('img/avatar.jpg') }}" alt="">
 												@endif
 											</div>
 											<div class="username">{{ $challenge->challenger_name }}</div>
 										</div>
 										<div class="photo">
 											<picture>
-												<source type="image/webp" srcset="/storage/webp/{{ $challenge->challenger_post }}">
-												<img id="photo" src="/storage/{{ $challenge->challenger_post }}" alt="">
+												<source type="image/webp" data-srcset="/storage/webp/{{ $challenge->challenger_post }}">
+												<img class="b-lazy" id="photo" data-src="/storage/{{ $challenge->challenger_post }}" alt="">
 											</picture>
 										</div>
 									</div>
@@ -269,18 +270,8 @@
 			</div>
 		</div>		
 
+		<script src="{{ URL::asset('js/minified/blazy.min.js') }}"></script>
 		<script src="{{ URL::asset('js/challenge.js') }}"></script>
-		<script>
-			$(document).ready(
-				function()
-				{
-					$(".page-placeholder").css({'display' : 'none'});
-					$(".page").css({'display' : ''});
-				}
-			);
-
-			NProgress.start();
-			NProgress.done();
-		</script>			
+		<script src="{{ URL::asset('js/main.js') }}"></script>				
 	</body>
 </html>
