@@ -6,7 +6,7 @@
         <p>Last updated: <i>not confirmed</i></p>
 
 
-        <p>Please read these Terms and Conditions carefully before using eze web app operated by eze company.</p>
+        <p>Please read these Terms and Conditions carefully before using Whyeze web app operated by Whyeze company.</p>
 
         <p>Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.</p>
 
@@ -24,9 +24,9 @@
 
     {{--                     <h2>Links To Other Web Sites</h2>
 
-        <p>Our Service may contain links to third-party web sites or services that are not owned or controlled by eze.</p>
+        <p>Our Service may contain links to third-party web sites or services that are not owned or controlled by Whyeze.</p>
 
-        <p>eze has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that eze shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services.</p>
+        <p>Whyeze has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that Whyeze shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services.</p>
 
         <p>We strongly advise you to read the terms and conditions and privacy policies of any third-party web sites or services that you visit.</p> --}}
 
@@ -47,19 +47,19 @@
 
         <h1>Disclaimer</h1>
 
-        <p>The information contained on eze is for general information purposes only.</p>
+        <p>The information contained on Whyeze is for general information purposes only.</p>
 
-        <p>eze assumes no responsibility for errors or omissions in the contents on the Service.</p>
+        <p>Whyeze assumes no responsibility for errors or omissions in the contents on the Service.</p>
 
-        <p>In no event shall eze be liable for any special, direct, indirect, consequential, or incidental damages or any damages whatsoever, whether in an action of contract, negligence or other tort, arising out of or in connection with the use of the Service or the contents of the Service. eze reserves the right to make additions, deletions, or modification to the contents on the Service at any time without prior notice.</p>
+        <p>In no event shall Whyeze be liable for any special, direct, indirect, consequential, or incidental damages or any damages whatsoever, whether in an action of contract, negligence or other tort, arising out of or in connection with the use of the Service or the contents of the Service. Whyeze reserves the right to make additions, deletions, or modification to the contents on the Service at any time without prior notice.</p>
 
-        <p>eze does not warrant that the web app is free of viruses or other harmful components.</p>
+        <p>Whyeze does not warrant that the web app is free of viruses or other harmful components.</p>
 
     {{--                     <h2>External links disclaimer</h2>
 
-        <p>eze may contain links to external websites that are not provided or maintained by or in any way affiliated with eze.</p>
+        <p>Whyeze may contain links to external websites that are not provided or maintained by or in any way affiliated with Whyeze.</p>
 
-        <p>Please note that eze does not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites.</p> --}}
+        <p>Please note that Whyeze does not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites.</p> --}}
 
         <h2>Contact Us</h2>
 

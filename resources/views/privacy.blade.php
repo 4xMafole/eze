@@ -6,11 +6,11 @@
         <p>Effective date: <i>not confirmed</i></p>
 
 
-        <p><b>eze</b> operates the https://www.whyeze.com web app.</p>
+        <p><b>Whyeze</b> operates the https://www.whyeze.com web app.</p>
 
         <p>This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
 
-        <p>We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible from <a href="{{ route('terms')}}" class="link"><b>eze terms</b></a>.</p>
+        <p>We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible from <a href="{{ route('terms')}}" class="link"><b>Whyeze terms</b></a>.</p>
 
 
         <h2>Information Collection And Use</h2>
@@ -47,7 +47,7 @@
 
         <h2>Use of Data</h2>
 
-        <p>eze uses the collected data for various purposes:</p>
+        <p>Whyeze uses the collected data for various purposes:</p>
         <ul>
             <li>To provide and maintain the Service</li>
             <li>To notify you about changes to our Service</li>
@@ -62,12 +62,12 @@
         <p>Your information, including Personal Data, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.</p>
         <p>If you are located outside Tanzania and choose to provide information to us, please note that we transfer the data, including Personal Data, to Tanzania and process it there.</p>
         <p>Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</p>
-        <p>eze will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.</p>
+        <p>Whyeze will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.</p>
 
         <h2>Disclosure Of Data</h2>
 
         <h3>Legal Requirements</h3>
-        <p>eze may disclose your Personal Data in the good faith belief that such action is necessary to:</p>
+        <p>Whyeze may disclose your Personal Data in the good faith belief that such action is necessary to:</p>
         <ul>
             <li>To comply with a legal obligation</li>
             <li>To protect and defend the rights or property of eze</li>
