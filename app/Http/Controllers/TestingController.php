@@ -28,11 +28,11 @@ class TestingController extends Controller
         //removes the extension part
         $file_name = basename($filename,'.'.$info['extension']);
 
-        dd($info)
-        $webp = Webp::make($file)->quality(70);
-        $webpPath = Storage::disk('webp')->makeDirectory('avatar/');
+        // dd($info);
+        $webp = Webp::make($file)->quality(0);
+        $webpPath = Storage::disk('webp')->makeDirectory('testing/');
 
-        $webp->save(storage_path('/app/public/webp/avatar/'.$file_name.'.webp'));
+        $webp->save(storage_path('/app/public/webp/testing/'.$file_name.'.webp'));
 
 
 

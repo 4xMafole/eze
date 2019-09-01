@@ -34,7 +34,7 @@
 		</form>
 
 		<div align="center">
-			<img src="{{ URL::asset('storage/webp/avatar/IMG_9274.webp') }}" alt="mafole" style="width: 200px;">
+			<img src="{{ URL::asset('storage/webp/testing/IMG_6734.webp') }}" alt="mafole" style="width: 200px;">
 		</div>
 	</body>
 </html>
