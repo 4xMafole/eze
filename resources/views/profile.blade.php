@@ -302,18 +302,7 @@
 	<script src="{{ URL::asset('js/profile.js') }}"></script>
 	<script src="{{ URL::asset('js/sidelit.js') }}"></script>
 	<script src="{{ URL::asset('js/nprogress.js') }}"></script>
-	<script>
-		$(document).ready(
-			function()
-			{
-				$(".page-placeholder").css({'display' : 'none'});
-				$(".page").css({'display' : ''});
-			}
-		);
-
-		NProgress.start();
-		NProgress.done();		
-	</script>
+	<script src="{{ URL::asset('js/main.js') }}"></script>
 
 </body>
 </html>

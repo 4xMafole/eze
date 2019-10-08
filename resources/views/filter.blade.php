@@ -290,11 +290,11 @@
 	</div>
 
 	<script src="{{ URL::asset('js/minified/blazy.min.js') }}"></script>
-	<script src="{{ URL::asset('js/main.js') }}"></script>	
 	<script src="{{ URL::asset('js/nav.js') }}"></script>
 	<script src="{{ URL::asset('js/filter.js') }}"></script>
 	<script src="{{ URL::asset('js/challenge.js') }}"></script>
 	<script src="{{ URL::asset('js/sidelit.js') }}"></script>
 	<script src="{{ URL::asset('js/nprogress.js') }}"></script>
+	<script src="{{ URL::asset('js/main.js') }}"></script>	
 </body>
 </html>
