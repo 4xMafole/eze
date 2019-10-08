@@ -18,7 +18,7 @@
 	<form method="post" action="{{ route('login') }}">
 		<input type="email" name="email"  placeholder="your_email@gmail.com" value="{{ Request::old('email') ?: '' }}" autocomplete="off">
 		<input type="password" name="password"  placeholder="Password" autocomplete="off">
-        <input name="remember" type="checkbox" />
+	    <input name="remember" type="checkbox" />
 		<div id="login-bn">
 			<button>Log in</button>
 		</div>
@@ -32,7 +32,6 @@
 		<span id="forgotten">forgot password?</span>
 		<br>
 		<br>
-{{-- 		<input type="email" name="email"  placeholder="your_email@gmail.com" autocomplete="off"> --}}
 		<div id="login-bn">
 			<button>Yes</button>
 		</div>

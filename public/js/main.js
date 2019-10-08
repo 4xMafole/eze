@@ -27,5 +27,6 @@ $(document).ready(
         post.on('afterChange', blazy.revalidate);
 	}
 );
+
 NProgress.start();
 NProgress.done();
